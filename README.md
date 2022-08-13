@@ -30,6 +30,8 @@ Los requerimientos mínimos en en esta página son los siguientes:
 ## Evaluación
 
 ## Fecha presentación
+La presentación del proyecto será en forma grupal, fecha a definir.
+
 
 
 
