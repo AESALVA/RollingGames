@@ -1,12 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@700&family=Josefin+Sans&family=Roboto+Slab&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@700&family=Josefin+Sans&family=Roboto+Slab&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
 }
-.frase{
-    font-family:'Roboto Slab';
-    border:2px solid red;
-}  
+.frase {
+  font-family: "Roboto Slab";
+  border: 2px solid red;
+}
 
+.footer_juegos {
+  background: linear-gradient(to bottom, #2d132c, #050308);
+}
+
+.footer_redes {
+  font-size: 3em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
