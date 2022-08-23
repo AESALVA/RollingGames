@@ -20,3 +20,19 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+
+.historia{
+  display: flex;
+}
+
+.bg_img_historia{
+  width: 100%;
+  opacity: .5;
+}
+
+.texto_historia{
+  position: absolute;
+  font-size: 3vw;
+  padding: 4em;
+  text-align: center;
+}
