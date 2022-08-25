@@ -1,25 +1,56 @@
-@import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@700&family=Josefin+Sans&family=Roboto+Slab&display=swap");
+ @import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@700&family=Josefin+Sans&family=Roboto+Slab&display=swap"); 
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: white;
+  color: rgba(255, 255, 255, 0.76);
+  font-family: "Roboto Slab";
 }
 .frase {
   font-family: "Roboto Slab";
   border: 2px solid red;
 }
-
+.juego_titulo{
+  text-align: center;
+}
 .footer_juegos {
   background: linear-gradient(to bottom, #2d132c, #050308);
+  padding: 1em;
 }
-
+.resumen_juegp{
+  font-size: 3vw;
+  text-align: center;
+  padding: 3em;
+}
+.conteiner_trailer{
+  
+}
 .footer_redes {
   font-size: 3em;
   display: grid;
   grid-template-columns:repeat(4, 1fr);
+  align-items: center;
 }
+.footer_redes a{
+  text-decoration: none;
+  border-radius: 50%;
+  width: 2em;
+}
+.footer_redes a:hover{
+  box-shadow: 3px 2px 22px 10px #C72C41;
+  color:#EE4540;
+}
+.icon:hover{
+  color:#EE4540;
+
+}
+
+.icon{
+  border-radius: 50%;
+  margin: auto;
+}
+
 
 .historia{
   display: flex;
