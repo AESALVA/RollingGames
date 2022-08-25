@@ -36,14 +36,21 @@
   text-decoration: none;
   border-radius: 50%;
   width: 2em;
+  transition: .5s;
 }
 .footer_redes a:hover{
-  box-shadow: 3px 2px 22px 10px #C72C41;
+  box-shadow: 0px 0px 15px 7px #C72C41;
   color:#EE4540;
+  transition: .5s;
 }
 .icon:hover{
+  text-shadow: 0px 0px 15px #C72C41;
   color:#EE4540;
-
+  transition: .1s;
+}
+.icon:hover::before{
+  transform: scale(1.4);
+  transition: .3s;
 }
 
 .icon{
