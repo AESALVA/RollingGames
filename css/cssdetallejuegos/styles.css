@@ -7,12 +7,14 @@
   color: rgba(255, 255, 255, 0.76);
   font-family: "Roboto Slab";
 }
+
 .frase {
   font-family: "Roboto Slab";
   border: 2px solid red;
 }
 .juego_titulo{
   text-align: center;
+  background-color: #151515;
 }
 .footer_juegos {
   background: linear-gradient(to bottom, #2d132c, #050308);
@@ -22,10 +24,22 @@
   font-size: 3vw;
   text-align: center;
   padding: 3em;
+  background-color: #151515;
 }
 .conteiner_trailer{
-  
+  background-color: #151515;
 }
+.img_trailer{
+  z-index: -1;
+}
+.img_trailer:hover{
+
+}
+
+.img_gif1{
+        
+}
+
 .footer_redes {
   font-size: 3em;
   display: grid;
@@ -73,4 +87,15 @@
   font-size: 3vw;
   padding: 4em;
   text-align: center;
+}
+
+@media (max-width:600px) {
+  .footer_redes{
+    font-size: 1.5em;
+  }
+
+.footer_redes a:hover{
+  box-shadow: none;
+}
+  
 }
