@@ -30,13 +30,14 @@
   background-color: #151515;
 }
 .img_trailer{
-  z-index: -1;
+  z-index: 1;
 }
 .img_trailer:hover{
-
+  visibility: hidden;
+  
 }
 
-.img_gif1{
+.img_gif{
         
 }
 
