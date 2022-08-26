@@ -34,11 +34,16 @@
 }
 .img_trailer:hover{
   visibility: hidden;
-  
+  z-index: -1; 
+  transition: .5s;
+  box-shadow: 0px 0px 15px 7px #C72C41;   
+
 }
 
-.img_gif{
-        
+.img_gif:hover{
+  box-shadow: 0px 0px 15px 7px #C72C41;   
+  transition: .5s;
+  z-index: 1;
 }
 
 .footer_redes {
