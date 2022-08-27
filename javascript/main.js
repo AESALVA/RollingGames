@@ -52,6 +52,30 @@ const DATA_GAMES = [
       "/RollingGames/AssetData/hearthstone/trailer/img3_juego.gif",
     ],
   },
+  {
+    id:"spiderman",
+    name:"Marvel's SpiderMan",
+    titulo:"DEMUESTRA TU GRANDEZA",
+    historia:"Explora un capítulo nuevo del universo de Marvel’s Spider-Man en la piel de un curtido Peter Parker. Protagonizado por uno de los superhéroes más emblemáticos del mundo, Marvel's Spider-Man presenta las habilidades acrobáticas, la improvisación y las telarañas que caracterizan al trepamuros, y añade mecánicas jamás vistas en un juego de Spider-Man.",
+    resumen:"Desde el parkour hasta las interacciones según el entorno, pasando por el nuevo sistema de combate y una acción espectacular, jugarás con Spider-Man como nunca antes has hecho hasta ahora.",
+    subtitulo:"Combate una nueva pandilla conocida como los Inner Demons",
+    img_historia:"/RollingGames/AssetData/MarvelSpiderman/bg_historia/thumb-1920-844967.jpg",
+    img_muestra:[
+        "/RollingGames/AssetData/MarvelSpiderman/carrousel/MarvelSpiderman.webp",
+        "/RollingGames/AssetData/MarvelSpiderman/carrousel/portada-marvel-spiderman.jpg",
+        "/RollingGames/AssetData/MarvelSpiderman/carrousel/template-38_7my3.jpg",
+    ],
+    imagenes:[
+        "/RollingGames/AssetData/MarvelSpiderman/trailer/maxresdefault.jpg",
+        "/RollingGames/AssetData/MarvelSpiderman/trailer/spiderman8.jpg",
+        "/RollingGames/AssetData/MarvelSpiderman/trailer/spiderman5.webp",
+    ],
+    animation:[
+        "/RollingGames/AssetData/MarvelSpiderman/trailer/spiderman1.gif",
+        "/RollingGames/AssetData/MarvelSpiderman/trailer/spiderman2.gif",
+        "/RollingGames/AssetData/MarvelSpiderman/trailer/spiderman3.gif",
+    ],
+  }
 ];
 
 const conteiner = document.getElementById("conteiner");
@@ -175,4 +199,4 @@ function createPage(data, id) {
   });
 }
 
-createPage(DATA_GAMES, "diablo");
+createPage(DATA_GAMES, "spiderman");
