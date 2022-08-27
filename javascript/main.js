@@ -144,11 +144,12 @@ function createPage(data, id) {
 
       conteiner.appendChild(section3);
         }
-    //   const index = DATA_GAMES.indexOf(d);
-    //   console.log(index);}
+        document.title = DATA_GAMES[index].name;
     });
 }
 
 createPage(DATA_GAMES,"diablo");
+
+
 
 

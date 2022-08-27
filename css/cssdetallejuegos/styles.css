@@ -7,7 +7,12 @@
   color: rgba(255, 255, 255, 0.76);
   font-family: "Roboto Slab";
 }
-
+body{
+  background-color: #151515;
+}
+section{
+  background-color: #151515;
+}
 .frase {
   font-family: "Roboto Slab";
   border: 2px solid red;
