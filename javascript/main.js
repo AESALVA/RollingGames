@@ -148,6 +148,30 @@ const DATA_GAMES = [
       "/RollingGames/AssetData/OverWatch/Trailer/over3.gif",
     ],
   },
+  {
+    id:"speedstorm",
+    name:"Speed Storm",
+    titulo:"TOMA LAS PISTAS POR TORMENTA",
+    historia:"Una increíble alineación de personajes de Disney y Pixar están listos y acelerando para el combate de carreras. Mejora las estadísticas de cada corredor y aprovecha al máximo sus habilidades únicas",
+    resumen:"La acción nunca se ralentiza gracias al nuevo contenido de temporada siempre a la vuelta de la esquina. Nuevos corredores, nuevas pistas y coleccionables aparecerán regularmente.",
+    subtitulo:"El último juego de carreras de batalla basado en héroes",
+    img_historia:"/RollingGames/AssetData/SpeedStorm/bg_historia/Disney-Speedstorm-Mario-Kart-style-free-racing-now-on-PlayStation-and-Xbox.jpeg",
+    img_muestra:[
+      "/RollingGames/AssetData/SpeedStorm/carrousel/Diseno-sin-titulo-53.jpg",
+      "/RollingGames/AssetData/SpeedStorm/carrousel/Disney-Speedstorm_2022_02-09-22_007-1-790x444.webp",
+      "/RollingGames/AssetData/SpeedStorm/carrousel/Disney-Speedstorm.webp",
+    ],
+    imagenes:[
+      "/RollingGames/AssetData/SpeedStorm/trailer/Disney_Speedstorm_x64_rtl-2022-06-08-20-33-21-235.jpg",
+      "/RollingGames/AssetData/SpeedStorm/trailer/disney_speedstorm.jpg_554688468.jpg",
+      "/RollingGames/AssetData/SpeedStorm/trailer/Disney-Speedstorm.webp",
+    ],
+    animation:[
+      "/RollingGames/AssetData/SpeedStorm/trailer/storm1.gif",
+      "/RollingGames/AssetData/SpeedStorm/trailer/storm2.gif",
+      "/RollingGames/AssetData/SpeedStorm/trailer/storm3.gif",
+    ],
+  },
 ];
 
 const conteiner = document.getElementById("conteiner");
@@ -271,4 +295,4 @@ function createPage(data, id) {
   });
 }
 
-createPage(DATA_GAMES, "overwatch");
+createPage(DATA_GAMES, "speedstorm");
