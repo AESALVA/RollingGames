@@ -124,6 +124,30 @@ const DATA_GAMES = [
       "/RollingGames/AssetData/NeedForSpeedHotPersuit/trailer/nfs3.gif",
     ],
   },
+  {
+    id:"overwatch",
+    name:"OverWatch",
+    titulo:"ELIGE A TUS HÉROES",
+    historia:"Overwatch es un variado juego de acción basado en equipos que presenta un listado diverso de héroes poderosos. Viaja por el mundo, forma un equipo y cumple objetivos en un emocionante combate de 6 vs. 6.",
+    resumen:"Cuando entras a una partida de Overwatch, debes elegir un héroe con el cual jugar. Tal vez te atraiga un simio genéticamente alterado de la luna. Tal vez prefieras a una luchadora por la libertad que viaja en el tiempo. ¿O es más tu estilo un DJ que lleva su música al campo de batalla? No importa quién quieras ser, hay un héroe de Overwatch para ti.",
+    subtitulo:"HAZ TU PARTE: TANQUE, DAÑO, APOYO",
+    img_historia:"/RollingGames/AssetData/OverWatch/bg_historia/overwatch-2-two-hours-of-gameplay-being-shown-this-month_z1xc.jpg",
+    img_muestra:[
+      "/RollingGames/AssetData/OverWatch/Carrousel/1621570019_379794_1621570207_noticia_normal.jpg",
+      "/RollingGames/AssetData/OverWatch/Carrousel/overwatch-2-201911123505930_25.jpg",
+      "/RollingGames/AssetData/OverWatch/Carrousel/U3cV9o5daemKS4QrBFXAXE-1200-80.webp",
+    ],
+    imagenes:[
+      "/RollingGames/AssetData/OverWatch/Trailer/454893_w926.jpg",
+      "/RollingGames/AssetData/OverWatch/Trailer/overwatch2_sojourn_gameplay_watermarked.jpg",
+      "/RollingGames/AssetData/OverWatch/Trailer/OVR_PR_Switch_GameplayShots_XA_036_A.jpeg",
+    ],
+    animation:[
+      "/RollingGames/AssetData/OverWatch/Trailer/over1.gif",
+      "/RollingGames/AssetData/OverWatch/Trailer/over2.gif",
+      "/RollingGames/AssetData/OverWatch/Trailer/over3.gif",
+    ],
+  },
 ];
 
 const conteiner = document.getElementById("conteiner");
@@ -247,4 +271,4 @@ function createPage(data, id) {
   });
 }
 
-createPage(DATA_GAMES, "nfs");
+createPage(DATA_GAMES, "overwatch");
