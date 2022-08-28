@@ -61,9 +61,9 @@ const DATA_GAMES = [
     subtitulo:"Combate una nueva pandilla conocida como los Inner Demons",
     img_historia:"/RollingGames/AssetData/MarvelSpiderman/bg_historia/thumb-1920-844967.jpg",
     img_muestra:[
-        "/RollingGames/AssetData/MarvelSpiderman/carrousel/MarvelSpiderman.webp",
+        "/RollingGames/AssetData/MortalKombatX/carrousel/Mortal-Kombat-X.webp",
         "/RollingGames/AssetData/MarvelSpiderman/carrousel/portada-marvel-spiderman.jpg",
-        "/RollingGames/AssetData/MarvelSpiderman/carrousel/template-38_7my3.jpg",
+        "/RollingGames/AssetData/MortalKombatX/carrousel/mortal-kombat-x-may-get-more-character-dlc-packs_knbu.1200.webp",
     ],
     imagenes:[
         "/RollingGames/AssetData/MarvelSpiderman/trailer/maxresdefault.jpg",
@@ -75,7 +75,31 @@ const DATA_GAMES = [
         "/RollingGames/AssetData/MarvelSpiderman/trailer/spiderman2.gif",
         "/RollingGames/AssetData/MarvelSpiderman/trailer/spiderman3.gif",
     ],
-  }
+  },
+  {
+    id:"mortalkombat",
+    name:"Mortal Kombat X",
+    titulo:"Raiden ha tomado el poder de Shinnok y ahora gobierna el Inframundo",
+    historia:"La historia se desarrolla 25 años después de los últimos hechos de Mortal Kombat 9, poniendo énfasis en los veteranos de edad, nuevos personajes y los descendientes de última generación de los combatientes anteriores. Nuevos personajes:Cassie Cage, de Jacqui Briggs, de Kung Jin y de Takeda Takahashi.",
+    resumen:"Tras la desaparición de Shao Kahn, el dios caído Shinnok ataca la Tierra con su ejército de criaturas del Inframundo, incluidos los guerreros del Reino de la Tierra que fallecieron en los sucesos de Mortal Kombat 9.",
+    subtitulo:"¡¡ FINISH HIM !!",
+    img_historia:"/RollingGames/AssetData/MortalKombatX/bg_historia/mortalkombat_img.jpg",
+    img_muestra:[
+      "/RollingGames/AssetData/MortalKombatX/carrousel/Mortal-Kombat-X.webp",
+      "/RollingGames/AssetData/MortalKombatX/carrousel/467148-analisis-mortal-kombat-x.webp",
+      "/RollingGames/AssetData/MortalKombatX/carrousel/mortal-kombat-x-may-get-more-character-dlc-packs_knbu.1200.webp",
+    ],
+    imagenes:[
+      "/RollingGames/AssetData/MortalKombatX/trailer/maxresdefault.jpg",
+      "/RollingGames/AssetData/MortalKombatX/trailer/MKX-Gameplay-PS-Blog-Stream.jpg",
+      "/RollingGames/AssetData/MortalKombatX/trailer/mortalimg1.jpg",
+    ],
+    animation:[
+      "/RollingGames/AssetData/MortalKombatX/trailer/mortal-kombat-mortal-kombat-x.gif",
+      "/RollingGames/AssetData/MortalKombatX/trailer/mortal3.gif",
+      "/RollingGames/AssetData/MortalKombatX/trailer/mortal4.gif",
+    ],
+  },
 ];
 
 const conteiner = document.getElementById("conteiner");
@@ -199,4 +223,4 @@ function createPage(data, id) {
   });
 }
 
-createPage(DATA_GAMES, "spiderman");
+createPage(DATA_GAMES, "mortalkombat");
