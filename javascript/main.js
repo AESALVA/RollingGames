@@ -172,6 +172,30 @@ const DATA_GAMES = [
       "/RollingGames/AssetData/SpeedStorm/trailer/storm3.gif",
     ],
   },
+  {
+    id:"warcraft",
+    name:"World Of WarCraft",
+    titulo:"World of Warcraft",
+    historia:"Con la intención de asentarse en la árida región de Durotar, la nueva Horda de Thrall expandió sus filas al invitar a los no-muertos de los Renegados a unirse a los orcos, tauren y trols. Mientras, enanos, gnomos y los antiguos elfos de la noche se comprometieron con una reforzada Alianza guiada por el reino humano de Ventormenta",
+    resumen:"Después de que el rey de Ventormenta, Varian Wrynn, desapareciera misteriosamente, el alto señor Bolvar Fordragón sirvió como regente; sin embargo, su trabajo se vio entorpecido por las manipulaciones y el control mental del dragón negro Onyxia, quien gobernaba disfrazado como una humana perteneciente a la nobleza. Mientras los héroes investigaban las manipulaciones de Onyxia, antiguos enemigos aterrizaron en territorios situados por doquier para amenazar por igual a la Horda y la Alianza. ",
+    subtitulo:"Terror a la luz de la antorcha",
+    img_historia:"/RollingGames/AssetData/WorldOfWarCraft/bg_Historia/77af837d4817cd358f11267f0fe01692-product-feature-wow-eras-bcc-960x540.png",
+    img_muestra:[
+      "/RollingGames/AssetData/WorldOfWarCraft/Carrousel/GQZO0U1WRW8E1566592359746.jpg",
+      "/RollingGames/AssetData/WorldOfWarCraft/Carrousel/maxresdefault.jpg",
+      "/RollingGames/AssetData/WorldOfWarCraft/Carrousel/U35WGFI7HBCEZPWJXCOTXK5GFQ.jpg",
+    ],
+    imagenes:[
+      "/RollingGames/AssetData/WorldOfWarCraft/Trailers/blizzard-announces-world-of-warcraft-shadowlands-final-major-content-update-eternitys-end-1636714713778.jpg",
+      "/RollingGames/AssetData/WorldOfWarCraft/Trailers/war1.jpg",
+      "/RollingGames/AssetData/WorldOfWarCraft/Trailers/war2.jpg",
+    ],
+    animation:[
+      "/RollingGames/AssetData/WorldOfWarCraft/Trailers/craft1.gif",
+      "/RollingGames/AssetData/WorldOfWarCraft/Trailers/craft2.gif",
+      "/RollingGames/AssetData/WorldOfWarCraft/Trailers/craft3.gif",
+    ],
+    },
 ];
 
 const conteiner = document.getElementById("conteiner");
@@ -295,4 +319,4 @@ function createPage(data, id) {
   });
 }
 
-createPage(DATA_GAMES, "speedstorm");
+createPage(DATA_GAMES, "warcraft");
