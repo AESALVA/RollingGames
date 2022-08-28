@@ -100,6 +100,30 @@ const DATA_GAMES = [
       "/RollingGames/AssetData/MortalKombatX/trailer/mortal4.gif",
     ],
   },
+  {
+    id:"nfs",
+    name:"Need For Speed Hot Persuit",
+    titulo:"SIENTE LA EMOCIÓN DE LA PERSECUCIÓN. LA ADRENALINA DE ESCAPAR.",
+    historia:"Ve a toda velocidad por las sinuosas carreteras de Seacrest County en carreras muy competitivas, ofrecidas por el revolucionario Autolog: ahora compatible con el juego cruzado.",
+    resumen:"Need for Speed™ Hot Pursuit Remastered ofrece un juego de carreras atemporal actualizado para la generación de hardware actual con gráficos mejorados.",
+    subtitulo:"COMPITE CON TUS AMIGOS CON EL JUEGO CRUZADO Y AUTOLOG",
+    img_historia:"/RollingGames/AssetData/NeedForSpeedHotPersuit/bg_historia/552668.jpg",
+    img_muestra:[
+      "/RollingGames/AssetData/NeedForSpeedHotPersuit/carrousel/hots1_9vp7.1200.webp",
+      "/RollingGames/AssetData/NeedForSpeedHotPersuit/carrousel/maxresdefault (1).jpg",
+      "/RollingGames/AssetData/NeedForSpeedHotPersuit/carrousel/nfs-reveal-screenshot-1jpgadaptcrop16x91455w_yyjc.1200.webp",
+    ],
+    imagenes:[
+      "/RollingGames/AssetData/NeedForSpeedHotPersuit/trailer/maxresdefault (1).jpg",
+      "/RollingGames/AssetData/NeedForSpeedHotPersuit/trailer/maxresdefault.jpg",
+      "/RollingGames/AssetData/NeedForSpeedHotPersuit/trailer/need-for-speed-hot-pursuit-e3-2010-off-screen-game_e4jp.640.webp",
+    ],
+    animation:[
+      "/RollingGames/AssetData/NeedForSpeedHotPersuit/trailer/nfs1.gif",
+      "/RollingGames/AssetData/NeedForSpeedHotPersuit/trailer/nfs2.gif",
+      "/RollingGames/AssetData/NeedForSpeedHotPersuit/trailer/nfs3.gif",
+    ],
+  },
 ];
 
 const conteiner = document.getElementById("conteiner");
@@ -223,4 +247,4 @@ function createPage(data, id) {
   });
 }
 
-createPage(DATA_GAMES, "mortalkombat");
+createPage(DATA_GAMES, "nfs");
