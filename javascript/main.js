@@ -61,9 +61,9 @@ const DATA_GAMES = [
     subtitulo:"Combate una nueva pandilla conocida como los Inner Demons",
     img_historia:"/RollingGames/AssetData/MarvelSpiderman/bg_historia/thumb-1920-844967.jpg",
     img_muestra:[
-        "/RollingGames/AssetData/MortalKombatX/carrousel/Mortal-Kombat-X.webp",
+        "/RollingGames/AssetData/MarvelSpiderman/carrousel/MarvelSpiderman.webp",
         "/RollingGames/AssetData/MarvelSpiderman/carrousel/portada-marvel-spiderman.jpg",
-        "/RollingGames/AssetData/MortalKombatX/carrousel/mortal-kombat-x-may-get-more-character-dlc-packs_knbu.1200.webp",
+        "/RollingGames/AssetData/MarvelSpiderman/carrousel/template-38_7my3.jpg",
     ],
     imagenes:[
         "/RollingGames/AssetData/MarvelSpiderman/trailer/maxresdefault.jpg",
@@ -319,4 +319,4 @@ function createPage(data, id) {
   });
 }
 
-createPage(DATA_GAMES, "warcraft");
+createPage(DATA_GAMES, "spiderman");
