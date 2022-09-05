@@ -319,7 +319,7 @@ function createPage(data, id) {
   });
 }
 
-createPage(DATA_GAMES, "spiderman");
+createPage(DATA_GAMES, "diablo");
 
 /**
  * LOGIN
