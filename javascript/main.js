@@ -319,7 +319,7 @@ function createPage(data, id) {
   });
 }
 
-createPage(DATA_GAMES, "diablo");
+createPage(DATA_GAMES,JSON.parse(localStorage.getItem('id')));
 
 /**
  * LOGIN
