@@ -39,7 +39,7 @@ const DATA_GAMES = [
     img_muestra: [
       "/RollingGames/AssetData/hearthstone/Carrousel/Como-jugar-Hearthstone-en-Linux.jpg",
       "/RollingGames/AssetData/hearthstone/Carrousel/default-4fff3c606c794dc03a915b9071f562d3.jpg",
-      "/RollingGames/AssetData/hearthstone/Carrousel/og_image-2e1ee3c5546d60c597788e9d2852cfca86b2322dd574acf7fe4d322d94ead7097cd6a021c716b44d572711b840bf1f106a300fbaebce3a020554c177a918ee6b.jpg",
+      "/RollingGames/AssetData/hearthstone/Carrousel/img3.jpg",
     ],
     imagenes: [
       "/RollingGames/AssetData/hearthstone/trailer/maxresdefault (2).jpg",
