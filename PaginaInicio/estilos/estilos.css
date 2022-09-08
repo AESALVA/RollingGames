@@ -4,6 +4,13 @@
   box-sizing: border-box;
   color: rgba(255, 255, 255, 0.76);
   font-family: "Roboto Slab";
+  text-decoration: none;
+}
+a{
+  color: rgba(255, 255, 255, 0.76);
+}
+a:hover{
+color:#c72c41;
 }
 body {
   background-color: #151515;
@@ -29,7 +36,7 @@ body {
   max-height: 400px;
 }
 #ver-mas-btn {
-  background-color: rgb(199, 44, 65);
+  background-color: #c72c41;
   border: rgb(199, 44, 65);
   width: 50%;
   margin-left: 25%;

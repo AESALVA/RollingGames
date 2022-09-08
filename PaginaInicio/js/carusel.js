@@ -154,11 +154,15 @@ data.map((d)=>{
 	<img src="${d.img}"  class="card-img-top" alt=""></a>
 	<div class="card-body">
 		<h5 class="card-title">${d.name}</h5>
-		<a href="#"  id="boton1" class="btn btn-outline-dark btn-sm" onclick="console.log(${d.id})" style="background-color:#2d132c; color:#fff;"> Ver mas </a>
+		<a href="#"  id="boton1" class="btn btn-outline-dark btn-sm" onclick="" style="background-color:#2d132c; color:#fff;"> Ver mas </a>
 	</div>
 </div>`;
+const button = document.createElement('a');
+button.className = "btn btn-dark border-0 " ;
+button.innerHTML = `<a target="_parent" href="/RollingGames/detalleJuego.html"> VER MAS </a>`;
+button.addEventListener("click",()=> localStorage.setItem("id",JSON.stringify(d.id)));
+cards.appendChild(button);
 principal.appendChild(cards);
-// localStorage.setItem("id",JSON.stringify(d.id))
 })
 	
 }
