@@ -4,13 +4,14 @@
   box-sizing: border-box;
   color: rgba(255, 255, 255, 0.76);
   font-family: "Roboto Slab";
-  text-decoration: none;
 }
-a{
-  color: rgba(255, 255, 255, 0.76);
-}
-a:hover{
+
+.boton{
 color:#c72c41;
+border: none;
+}
+.boton:hover{
+  color:#801336;
 }
 body {
   background-color: #151515;
