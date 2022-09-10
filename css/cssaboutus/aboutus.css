@@ -117,29 +117,32 @@ section {
 .texto_aboutus2 {
   text-align: center;
   padding: 2em 3em;
-  background-color: #801336;
+  background:linear-gradient(0deg,#801336,#22010c);
 }
 .texto_aboutus2 h2 {
-  font-size: 4vw;
+  font-size: 3em;
   padding: 1em 0;
-  background-color: #801336;
+  background:linear-gradient(0deg,#801336,#22010c);
+  border-radius: 5em;
 }
 .texto_aboutus2 p {
   line-height: 1.5;
-  font-size: 2vw;
-  background-color: #801336;
+  font-size: 2em;
+  background:linear-gradient(0deg,#801336,#22010c);
+  border-radius: 5em;
+  padding: 2em;
+
 }
 .card-group {
   text-align: center;
   min-height: 40vh;
-  background-color: #801336;
   max-width: 75vw;
 }
 
 .conteiner_cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding:0 5em;
+  padding:4em 5em;
   background-color: #801336;
 }
 .card_perfil {
@@ -175,7 +178,15 @@ section {
   display: flex;
   justify-content: center;
 }
-
+@media (max-width: 1000px){
+  .conteiner_cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  .card_perfil {
+    margin: 1em auto;
+    max-width: 15em;
+  }
+}
 @media (max-width: 600px) {
   .footer_redes {
     font-size: 1.5em;
@@ -186,12 +197,19 @@ section {
   }
   .conteiner_cards {
     grid-template-columns: 1fr;
+    padding: 0;
   }
   .card_perfil {
     margin: 1em auto;
-    max-width: 20em;
+    max-width: 15em;
   }
   .img {
     max-width: 20em;
+  }
+  .texto_aboutus2 h2 {
+    font-size: 2em;
+  }
+  .texto_aboutus2 p{
+    font-size: 1em;
   }
 }

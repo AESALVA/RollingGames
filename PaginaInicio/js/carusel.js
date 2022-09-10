@@ -150,7 +150,7 @@ const principal = document.getElementById('principal');
 function createCards(data) {
 data.map((d)=>{
 	const cards = document.createElement('div');
-  cards.className= "d-flex flex-column align-items-center col-3 m-0 p-5"
+  cards.className= "d-flex flex-column align-items-center col-md-6 col-lg-3 m-0 p-5"
   const button = document.createElement('a');
   button.innerHTML = `<a class="boton btn btn-dark " target="_parent" href="/RollingGames/detalleJuego.html"> VER MAS </a>`;
 	cards.innerHTML = `<div class="juego card w-100">
