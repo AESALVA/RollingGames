@@ -162,6 +162,10 @@ section {
 .card_perfil:hover{
   box-shadow: 0px 0px 15px 7px #151515;
   transition: 0.5s;
+}
+.card_perfil:hover p{
+  text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
+  transition: 0.5s;
 
 }
 .card_perfil img {
@@ -169,6 +173,8 @@ section {
 }
 .card_perfil p {
   padding-top: 2em;
+  font-size: 1.5em;
+  text-shadow: 1px 1px 2px black, 0 0 1em #2d132c, 0 0 0.2em #2d132c;
 }
 
 .img {
