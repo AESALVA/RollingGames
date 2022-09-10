@@ -146,6 +146,7 @@ function createRemarkable(data) {
 createRemarkable(DATA_REMARKABLE[0]);
 
 const principal = document.getElementById('principal');
+const categoria = document.getElementById('categoria');
 
 function createCards(data) {
 data.map((d)=>{
@@ -166,5 +167,33 @@ principal.appendChild(cards);
 	
 }
 
+function createCardsTwo(data) {
+  data.map((d)=>{
+    const cards = document.createElement('div');
+    const button = document.createElement('a');
+    cards.classList="card_perfil";
+    cards.innerHTML = `
+    <div class="img">
+      <img
+        src="${d.img}"
+        alt="img_juego"
+      />
+    </div>
+    <p>${d.name}</p>
+  </div>`;
+  button.innerHTML=`<a class="button_verMas" target="_parent" href="/RollingGames/detalleJuego.html"> VER MAS </a>`;
+  button.addEventListener("click",()=> localStorage.setItem("id",JSON.stringify(d.id)));
+  cards.appendChild(button);
+  categoria.appendChild(cards);
+  })
+  
+}
+
+
 createCards(DATA_REMARKABLE);
+
+createCardsTwo(DATA_REMARKABLE);
+
+
+
 
