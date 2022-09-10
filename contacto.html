@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/navbar.css" />
+    <link rel="stylesheet" href="./styles/contacto.css" />
+    <!--Link para usar el icono de Font Awesome-->
+    <script
+      src="https://kit.fontawesome.com/574da1cd36.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Contacto</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <!--Logo-->
+        <a href="#" class="logo">
+          <img src="./assests/Logo.png" alt="Logo Rolling Games" />
+        </a>
+        <!--Boton hamburguesa-->
+        <button class="nav-toggle hide" aria-label="Abrir menú">
+          <span id="bars">
+            <i class="fa-solid fa-bars fa-lumos"></i>
+          </span>
+          <span id="cross" class="hide">
+            <i class="fa-solid fa-xmark"></i>
+          </span>
+        </button>
+        <!--Menu-->
+        <ul class="nav-menu">
+          <li class="nav-menu-item">
+            <a href="#" class="nav-menu-link nav-link">Inicio |</a>
+          </li>
+          <li class="nav-menu-item">
+            <a href="#" class="nav-menu-link nav-link">Contacto |</a>
+          </li>
+          <li class="nav-menu-item">
+            <a href="#" class="nav-menu-link nav-link">Acerca de |</a>
+          </li>
+          <li class="nav-menu-item hide">
+            <a href="#" class="nav-menu-link nav-link">Administración |</a>
+          </li>
+          <li class="nav-menu-item" id="menuLogin">
+            <a href="#" class="nav-menu-link nav-link"
+              >Login <i class="fa-solid fa-angle-down" id="menu-arrow"></i> |</a
+            >
+            <ul class="menu-nesting hide" id="menuInsideLogin">
+              <li class="menu-inside">
+                <a href="#" class="nav-menu-link-inside">Iniciar Sesion</a>
+              </li>
+              <li class="menu-inside">
+                <a href="#" class="nav-menu-link-inside">Registrarse</a>
+              </li>
+              <li class="menu-inside">
+                <a href="#" class="nav-menu-link-inside">Salir</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <div class="container-contact">
+          <div class="column1">
+            <div class="title-contact">Contactanos</div>
+            <div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.115124626972!2d-65.20925608545093!3d-26.83629039648368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225c0e8d0271b7%3A0x7946062ac490db30!2sGral.%20Paz%20576%2C%20T4000%20San%20Miguel%20de%20Tucum%C3%A1n%2C%20Tucum%C3%A1n!5e0!3m2!1ses-419!2sar!4v1661723413486!5m2!1ses-419!2sar"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <div id="ubication">
+              <p><i class="fa-solid fa-location-dot"></i> Gral. Paz 576</p>
+              <p><i class="fa-solid fa-location-dot"></i> Piso 9 - Oficina 2</p>
+              <p><i class="fa-solid fa-location-dot"></i> San Miguel de Tucuman - Argentina</p>
+            </div>
+          </div>
+          <div class="column2">
+            <input
+              type="text"
+              placeholder="Nombre y Apellido"
+              class="inputData center back"
+            />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
+              class="inputData center back"
+            />
+            <textarea
+              name="mensaje"
+              id="mensaje"
+              class="back"
+            ></textarea>
+            <button type="submit" class="button">Enviar</button>
+            <form></form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--Link al navbar.js-->
+    <script src="./script/navbar.js" defer></script>
+  </body>
+</html>

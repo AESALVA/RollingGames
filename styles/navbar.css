@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 100px 20px 0;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #2D132C;
+    height: 80px;
+    width: 100%;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: flex-end;
+    margin-right: 20px;
+    list-style: none;
+    padding-bottom: 8px;
+}
+
+.nav-toggle {
+    background: none;
+    color: white;
+    border: none;
+    font-size: 30px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.nav-menu-item {
+    position: relative;
+    font-size: 20px;
+    margin-right: 2px;
+    width: max-content; /*El ancho del li es el de su contenido*/
+}
+
+.menu-nesting {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 31px;
+    right: 13px;
+    background-color: #2d132c8a;
+    width: max-content;
+}
+
+.nav-menu-link-inside {
+    text-decoration: none;
+    color: white;
+}
+
+.hide {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.nav-menu-link,
+.menu-inside {
+    padding: 8px 12px;
+    border-radius: 3px;
+    transition: 0.5s; /*Para que cuando se pase por arriba de una opcion la transicion del fondo sea mas lenta*/
+}
+
+.nav-menu-link:hover,
+.menu-inside:hover,
+.nav-menu-link-active {
+    background-color: #C72C41;
+    color:beige;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    margin-left: 20px;
+}
+
+.logo img{
+    width: 60px;
+    height: 60px;
+}
+
+
+/*Para dispositivos que tengan menos de 768px*/
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .header {
+        height: 60px;
+    }
+
+    .logo {
+        height: 60px;
+    }
+
+    .logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: flex-end; /*Para que los items se alinien al centro los items*/
+        background-color: #2d132cb0;
+        position: fixed; /*Movemos el menu para que se despliegue sobre el body*/
+        left: 0;
+        top: 60px; /*Debe coincidir con el alto del header*/
+        width: 100%; /*Al desplegarse ocupe toda el ancho de la pantalla*/
+        padding: 20px 0;
+        /*Hacemos que el menu ocupe al desplegarse el 100% de la pantalla menos el alto del header*/
+        height: calc(100% - 60px);
+        /*Que muestre una barra de scroll cuando es pequeño el alto del menu para visualizar*/ 
+        overflow-y: auto;
+        left: 100%; /*Si el menu no esta activo se desplaza hacia la izquieda y no se visualiza*/
+        transition: left 0.3s;
+    }
+
+    .menu-nesting{
+        top: 45px;
+        right: 0;
+        padding-right: 10px;
+        background-color: #2d132c00;
+        z-index: 1;
+    }
+
+    .nav-menu-item {
+        font-size: 25px;
+        margin: 5px 0;
+        padding-top: 10px;
+    }
+
+    .nav-menu-link:hover,
+    .menu-inside:hover,
+    .nav-menu-link-active {
+        background: none;
+        color: #EE4540;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-menu-link-visible {
+        left: 0;
+    }
+
+}

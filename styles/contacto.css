@@ -1,0 +1,127 @@
+body {
+    background-image: url("../assests/fondo-contacto2.png");
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding-top: 30px;
+}
+
+.container-contact {
+    background: rgba(217, 217, 217, 0.5);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+}
+
+.column1, .column2 {
+    margin: 32px 40px;
+}
+
+
+.title-contact {
+    font-size: 32px;
+    width: 379px;
+    height: 75px;
+    text-align: center;
+}
+
+iframe {
+    width: 379px;
+    height: 220px;
+}
+
+.back {
+    background: rgba(217, 217, 217, 0.6);
+}
+
+.inputData{
+    display: block;
+    border: none;
+    margin-bottom: 31px;
+    width: 320px;
+    height: 50px;
+}
+
+.center{
+    text-align: center;
+}
+
+textarea {
+    width: 320px;
+    height: 194px;
+    resize: none;
+    border: none;
+}
+
+#ubication {
+    width: 363px;
+    height: 120px;
+    margin-top: 32px;
+}
+
+#ubication p {
+    margin-bottom: 10px;
+}
+
+.button {
+    display: block;
+    width: 320px;
+    height: 50px;
+    background: #C72C41;
+    border-radius: 14px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    margin-top: 40px;
+}
+
+/*Para dispositivos que tengan menos de 768px*/
+@media (max-width: 768px) {
+    .container-contact {
+        flex-direction: column;
+    }
+
+    .title-contact {
+        width: 200px;
+    }
+
+    iframe {
+        width: 200px;
+    }
+
+    .inputData{
+        width: 200px;
+    }
+
+    #ubication {
+        width: 150px;
+    }
+
+    textarea {
+        width: 15px;
+    }
+
+    .button {
+        width: 200px;
+    }
+
+    .column1, .column2 {
+        margin: 20px 30px;
+    }
+
+    textarea {
+        width: 200px;
+    }
+
+}
