@@ -1,3 +1,4 @@
+// ---------------------------------------------------------------------------------------------------------
 /*********Codigo para el boton modificar juego**********/
 const editButton= document.querySelector('.edit');
 
@@ -5,7 +6,7 @@ editButton.addEventListener('click', () => {
     modal.classList.add('modal--show');
 });
 
-
+// ---------------------------------------------------------------------------------------------------------
 /*********Codigo para la carga de los archivos**********/
 const button = document.querySelector('#selectedFiles');
 const input = document.querySelector('#input-file');
@@ -38,7 +39,7 @@ function processFile(file) {
     const validExtensionsImages= ['image/jpeg','image/jpg','image/png','image/gif'];
 
     if(validExtensionsImages.includes(docType)) {
-        //El archivo arrastrado/seleccionado es valido
+        //El archivo seleccionado es valido
         const fileReader = new FileReader();
         const id = `file-${Math.random().toString(32).substring(7)}`;
 
@@ -59,48 +60,115 @@ function processFile(file) {
 
         fileReader.readAsDataURL(file);
     } else {
-        //El archivo arrastrado/seleccionado no es valido
+        //El archivo seleccionado no es valido
         alert("No es un archivo valido");
     }
 }
 
+// ---------------------------------------------------------------------------------------------------------
 /**********Codigo para mostrar y ocultar la ventana modal**********/
-const addGame = document.getElementById('addGame'); //Traigo el boton para mostrar la ventana modal
+const openModal = document.getElementById('openModal'); //Traigo el boton para mostrar la ventana modal
 const modal= document.getElementById('modal'); //Traigo la ventana modal
 
-addGame.addEventListener('click', () => {
+openModal.addEventListener('click', () => {
     /*Le saco o le añado la clase 'modal--show'*/
     modal.classList.add('modal--show');
-    addNewGame();
 }); 
 
 
 /*Traigo el boton para cerrar el modal*/
-const closeModal = document.getElementById('closeModal');
+const buttonCloseModal = document.getElementById('closeModal');
 
-closeModal.addEventListener('click', () => {
-    const preview= document.querySelector('.preview');
-    preview.innerHTML= "";
+buttonCloseModal.addEventListener('click', () => closeModal());
+
+const closeModal = () => {
+    if(modifiedOrAddedGame) {
+        const preview= document.querySelector('.preview');
+        preview.innerHTML= "";
+        cleanInputs([inputId, inputNameGame, inputSubNameGame,inputTitleGame, textAreaHistory, textAreaSummary]);
+        modifiedOrAddedGame= false;
+    }
 
     /*Le saco o le añado la clase 'modal--show'*/
     modal.classList.remove('modal--show');
+}
+
+// ---------------------------------------------------------------------------------------------------------
+/**********Codigo para agregar un nuevo juego**********/
+
+/*Traigo los datos que se añaden a traves de la ventana modal*/
+const addNewGame = document.getElementById('addNewGame');
+const inputId = document.getElementById('idJuego');
+const inputNameGame = document.getElementById('nombreJuego');
+const inputSubNameGame = document.getElementById('subtituloJuego');
+const inputTitleGame = document.getElementById('tituloJuego');
+const textAreaHistory = document.getElementById('historiaJuego');
+const textAreaSummary = document.getElementById('resumenJuego');
+let modifiedOrAddedGame = false;
+
+addNewGame.addEventListener('click',  (e) => {
+    e.preventDefault();
+    
+    if(!validationInput([inputId, inputNameGame, inputSubNameGame,inputTitleGame, textAreaHistory, textAreaSummary])){
+        //Creo un objeto
+        const newGame = {
+            id: inputId.value,
+            name: inputNameGame.value,
+            titulo: inputTitleGame.value,
+            historia: textAreaHistory.value,
+            resumen: textAreaSummary.value,
+        };
+    
+        //Muestro el juego por consola
+        console.log(newGame);
+        modifiedOrAddedGame= true;
+
+        //Muestro ventana de exito
+        showAlert('success', inputTitleGame.value);
+        
+    }
+    
 });
 
-/**********Codigo para agregar un nuevo juego**********/
-const addNewGame= () => {
-    /*Traigo los datos que se añaden a traves de la ventana modal*/
-    const inputNameGame = document.getElementById('nombreJuego');
-    const inputSubNameGame = document.getElementById('subtituloJuego');
-    const inputTitleGame = document.getElementById('tituloJuego');
-    const textAreaHistory = document.getElementById('historiaJuego');
-    const textAreaSummary = document.getElementById('resumenJuego');
+//Valido los datos ingresado por los inputs
+const validationInput = (inputs) =>{
+    let flag= false;
+    let nameLabel= "";
 
-    //Creo un objeto
-    const newGame = {
-        id: "algo",
-        name: inputNameGame.value,
-        titulo: inputTitleGame.value,
-        historia: textAreaHistory.value,
-        resumen: textAreaSummary.value,
-    };
+
+    for(let i = 0; i < inputs.length; i++){
+        if(inputs[i].value === "") {
+            nameLabel = inputs[i].labels[0].innerText;
+            flag= true;
+            break;
+        }
+    }
+
+    if(flag) {
+        showAlert('error', nameLabel);
+    }
+    return flag;
 };
+
+const cleanInputs= (inputs) =>{
+    inputs.forEach(input => {
+        input.value= "";
+    });
+};
+
+//Ventana de alerta personalizada
+const showAlert = (typeAlert, message) => {
+    if(typeAlert === 'error') {
+        Swal.fire('Alerta', `Debe completar el campo ${message}`, typeAlert);
+    }else if(typeAlert === "success") {
+        Swal.fire('Exito', `Se añadio el juego ${message}`, typeAlert)
+        .then((result) => {
+            if (result.isConfirmed) {
+                //Cierro la ventana modal
+                closeModal();
+             } 
+        });
+    }
+};
+
+

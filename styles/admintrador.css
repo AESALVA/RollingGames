@@ -206,7 +206,7 @@ h1{
     display: none;
 }
 
-/*Ventana Modal*/
+/*********ESTILOS PARA LA VENTANA MODAL*********/
 .modal {
     position: fixed;
     top: 0;
@@ -231,19 +231,23 @@ h1{
 }
 
 .modal-container {
-    margin: auto;
+    margin: 50px auto;
     width: 80%;
+    max-height: 768px;
     max-width: 768px;
     height: 80%;
     background-color: #fff;
+    display: flex;
+    flex-direction: column;
     border-radius: 6px;
-    padding: 3em 2.5em;
+    padding: 2.5em 2em;
     transform: var(--transform);
     transition: var(--transition);
 }
 
 .modal-body {
     width: 100%;
+    overflow-y: auto;
 }
 
 .modal-title {
@@ -286,9 +290,28 @@ h1{
 
 .modal-footer {
     width: 100%;
+    display: flex;
+    justify-content:flex-end;
+    margin-top: 10px;
 }
 
-/*Estilos para ingresar imagenes y videos'*/
+.modal-footer-button {
+    padding: 10px 25px;
+    margin-left: 30px;
+    border: 0;
+    font-size: 20px;
+    outline: none;
+    background-color: #ee4640;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-footer-button:hover {
+    background-color: #a82d29b0;
+}
+
+/*****Estilos para ingresar imagenes y videos*****/
 .preview {
     border: 5px dashed #ddd;
     height: inherit;
@@ -326,6 +349,7 @@ h1{
     border: 1px solid #ddd;
 }
 
+
 @media (max-width: 1200px) { 
     .container {
         width: 100%;
@@ -346,12 +370,8 @@ h1{
         align-self: flex-end;
     }
 
-    .modal {
-        overflow-y: auto;
-    }
-
     .modal-container {
-        height: 95%;
+        padding: 1.5srem 1.5rem;
      }
 
 }
@@ -391,8 +411,6 @@ h1{
 
     .modal-container {
         padding: 2em 1.5em;
-        margin-top: 15%;
-        height: auto;
     }
 
     .modal-title {
@@ -408,7 +426,17 @@ h1{
 
     .modal-body-column input {
         width: 100%;
-     }
+    }
+
+    .modal-footer {
+        padding-top: 50px;
+    }
+
+    .modal-footer-button {
+        padding: 5px 12.5px;
+        margin-left: 15px;
+    }
+    
 }
 
 @media (max-width: 576px) {
@@ -440,4 +468,5 @@ h1{
         display: flex!important;
         justify-content: center;
     }
+
 }
