@@ -192,7 +192,3 @@ function createCardsTwo(data) {
 
 
 createCardsTwo(DATA_REMARKABLE);
-
-
-
-

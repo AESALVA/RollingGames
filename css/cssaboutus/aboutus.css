@@ -208,6 +208,14 @@ section {
   transition: 0.5s;
 
 }
+.seccion{
+  text-align: center;
+  font-size: 3em;
+  padding: 1em 0;
+  background:linear-gradient(0deg,#801336,#22010c);
+  border-radius: 5em;
+  margin: 0 1em;
+}
 
 @media (max-width: 1000px){
   .conteiner_cards {
@@ -242,5 +250,8 @@ section {
   }
   .texto_aboutus2 p{
     font-size: 1em;
+  }
+  .seccion{
+    font-size: 2em;
   }
 }
