@@ -1,67 +1,4 @@
 
-// const fila = document.querySelectorAll('.contenedor-carousel');
-// const juego = document.querySelectorAll('.juego');
-
-// const flechaIzquierda = document.getElementById('flecha-izquierda');
-// const flechaDerecha = document.getElementById('flecha-derecha');
-
-// fila.forEach((fila)=> {
-// // ? ----- ----- Event Listener para la flecha derecha. ----- -----
-// flechaDerecha.addEventListener('click', () => {
-// 	fila.scrollLeft += fila.offsetWidth;
-
-// 	const indicadorActivo = document.querySelector('.indicadores .activo');
-// 	if(indicadorActivo.nextSibling){
-// 		indicadorActivo.nextSibling.classList.add('activo');
-// 		indicadorActivo.classList.remove('activo');
-// 	}
-// });
-
-// // ? ----- ----- Event Listener para la flecha izquierda. ----- -----
-// flechaIzquierda.addEventListener('click', () => {
-// 	fila.scrollLeft -= fila.offsetWidth;
-
-// 	const indicadorActivo = document.querySelector('.indicadores .activo');
-// 	if(indicadorActivo.previousSibling){
-// 		indicadorActivo.previousSibling.classList.add('activo');
-// 		indicadorActivo.classList.remove('activo');
-// 	}
-// });
-
-// // ? ----- ----- Paginacion ----- -----
-
-// const numeroPaginas = Math.ceil(juego.length / 20);
-// for(let i = 0; i < numeroPaginas; i++){
-// 	const indicador = document.createElement('button');
-
-// 	if(i === 0){
-// 		indicador.classList.add('activo');
-// 	}
-
-// 	document.querySelector('.indicadores').appendChild(indicador);
-// 	indicador.addEventListener('click', (e) => {
-// 		fila.scrollLeft = i * fila.offsetWidth;
-
-// 		document.querySelector('.indicadores .activo').classList.remove('activo');
-// 		e.target.classList.add('activo');
-// 	});
-// }
-// });
-// // ? ----- ----- Hover ----- -----
-// juego.forEach((juego) => {
-// 	juego.addEventListener('mouseenter', (e) => {
-// 		const elemento = e.currentTarget;
-// 		setTimeout(() => {
-// 			juego.forEach(juego => juego.classList.remove('hover'));
-// 			elemento.classList.add('hover');
-// 		}, 300);
-// 	});
-// });
-
-// fila.addEventListener('mouseleave', () => {
-// 	juego.forEach(pelicula => juego.classList.remove('hover'));
-// });
-
 const DATA_REMARKABLE = [
   {
     img: "/RollingGames/PaginaInicio/inicio/imagenes/spiderman.jpg",
@@ -147,25 +84,11 @@ createRemarkable(DATA_REMARKABLE[0]);
 
 const principal = document.getElementById('principal');
 const categoria = document.getElementById('categoria');
+const estrategia = document.getElementById('estrategia');
+const accion = document.getElementById('accion');
+const aventura = document.getElementById('aventura');
+const otros = document.getElementById('otros')
 
-function createCards(data) {
-data.map((d)=>{
-	const cards = document.createElement('div');
-  cards.className= "d-flex flex-column align-items-center col-md-6 col-lg-3 m-0 p-5"
-  const button = document.createElement('a');
-  button.innerHTML = `<a class="boton btn btn-dark " target="_parent" href="/RollingGames/detalleJuego.html"> VER MAS </a>`;
-	cards.innerHTML = `<div class="juego card w-100">
-	<img src="${d.img}"  class="card-img-top" alt=""></a>
-	<div class="card-body">
-		<h5 class="card-title">${d.name}</h5>
-	</div>
-</div>`;
-button.addEventListener("click",()=> localStorage.setItem("id",JSON.stringify(d.id)));
-cards.appendChild(button);
-principal.appendChild(cards);
-})
-	
-}
 
 function createCardsTwo(data) {
   data.map((d)=>{
@@ -189,6 +112,41 @@ function createCardsTwo(data) {
   
 }
 
+function createCardsThree(data,id) {
+  data.map((d)=>{
+    const cards = document.createElement('div');
+    const button = document.createElement('a');
+    cards.classList="card_perfil";
+    cards.innerHTML = `
+    <div class="img">
+      <img
+        src="${d.img}"
+        alt="img_juego"
+      />
+    </div>
+    <p>${d.name}</p>
+  </div>`;
+  button.innerHTML=`<a class="button_verMas" target="_parent" href="/RollingGames/detalleJuego.html"> VER MAS </a>`;
+  button.addEventListener("click",()=> localStorage.setItem("id",JSON.stringify(d.id)));
+  cards.appendChild(button);
+  if (id===estrategia) {
+    estrategia.appendChild(cards);
+  }else if (id===accion){
+    accion.appendChild(cards);
+  }else if (id===aventura){
+    aventura.appendChild(cards);
+  }else{
+    otros.appendChild(cards);
+  }
+  })
+  
+}
+
+
 
 
 createCardsTwo(DATA_REMARKABLE);
+createCardsThree(DATA_REMARKABLE,estrategia);
+createCardsThree(DATA_REMARKABLE,accion);
+createCardsThree(DATA_REMARKABLE,aventura)
+createCardsThree(DATA_REMARKABLE,otros);
