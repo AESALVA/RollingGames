@@ -11,6 +11,9 @@
       src="https://kit.fontawesome.com/574da1cd36.js"
       crossorigin="anonymous"
     ></script>
+    <!--Link a Sweet Alert-->
+    <link rel="stylesheet" href="./assests/Sweet/sweetalert2.css">
+    <script src="./assests/Sweet/sweetalert2.min.js" defer></script>
     <title>Rolling Games</title>
   </head>
   <body>
@@ -67,7 +70,7 @@
         <div class="header-datatable">
           <span id="space"></span>
           <h1 id="datatable-title">Administrar Productos</h1>
-          <button class="button-new-game" type="button" id="addGame">
+          <button class="button-new-game" type="button" id="openModal">
             Nuevo +
           </button>
         </div>
@@ -178,10 +181,10 @@
     <!--Ventana Modal-->
     <div class="modal" id="modal">
       <div class="modal-container">
+        <div class="modal-title">
+          <h2>Cargar nuevo Juego</h2>
+        </div>
         <div class="modal-body">
-          <div class="modal-title">
-            <h2>Cargar nuevo Juego</h2>
-          </div>
           <div class="modal-body-row">
             <div class="modal-body-column">
               <label for="idJuego">Id</label>
@@ -219,14 +222,15 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" id="closeModal">Cancelar</button>
-          <button type="button">Agregar</button>
+          <button type="button" id="closeModal" class="modal-footer-button">Cancelar</button>
+          <button type="button" id="addNewGame" class="modal-footer-button">Agregar</button>
         </div>
       </div>
     </div>
 
     <!--Link al navbar.js-->
     <script src="./script/navbar.js" defer></script>
+    <!--Link al administrador.js-->
     <script src="./script/administrador.js" defer></script>
   </body>
 </html>
