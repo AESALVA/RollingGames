@@ -71,7 +71,7 @@ function createRemarkable(data) {
 					  <h5 class="card-title">${data.name}</h5>
 					  <p class="card-text text-muted">YA DISPONIBLE</p>
 					  <p class="card-text">${data.resumen}</p>
-					  <a id="ver-mas-btn" class="btn btn-primary btn-sm " href="/RollingGames/detalleJuego.html" target:"_parent" onclick="createPage(DATA_GAMES, '${data.id}')" role="button">Ver más</a>
+					  <div class="fondo"><a id="ver-mas-btn" class="button_verMas" href="/RollingGames/detalleJuego.html" target:"_parent" onclick="createPage(DATA_GAMES, '${data.id}')" role="button">Ver más</a></div>
 					</div>
 				  </div>
 				</div>

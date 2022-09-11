@@ -22,12 +22,11 @@ body {
 }
 
 .seccion-destacado {
-  width: 70vw;
+  max-width: 70vw;
   margin: auto;
   margin-top: 20px;
 }
 #card-destacado {
-  max-height: 400px;
   background-color: #2d132c;
   border-radius: 20px;
 }
@@ -36,10 +35,17 @@ body {
   max-height: 400px;
 }
 #ver-mas-btn {
-  background-color: #c72c41;
-  border: rgb(199, 44, 65);
-  width: 50%;
-  margin-left: 25%;
+  background:linear-gradient(0deg,#801336,#22010c);
+  padding:1em 4em ;
+  border-radius: 5em;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20em;
+}
+.fondo{
+  padding: 2em;
 }
 .card-body {
   color: white;
@@ -235,7 +241,16 @@ a {
   border-radius: 50%;
   margin: auto;
 }
-
+@media (max-width: 1000px) {
+  #ver-mas-btn {
+    width: 15em;
+    padding: .5em;
+  }
+  .fondo{
+    display: flex;
+    justify-content: center;
+  }
+}
 @media (max-width: 600px) {
   .footer_redes {
     font-size: 1.5em;
@@ -243,6 +258,14 @@ a {
 
   .footer_redes a:hover {
     box-shadow: none;
+  }
+  #ver-mas-btn {
+    width: 15em;
+    padding: .5em;
+  }
+  .fondo{
+    display: flex;
+    justify-content: center;
   }
 }
 
