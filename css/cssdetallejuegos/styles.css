@@ -8,6 +8,12 @@
   font-family: "Roboto Slab";
 }
 
+body{
+  background-color: #151515;
+}
+section{
+  background-color: #151515;
+}
 .frase {
   font-family: "Roboto Slab";
   border: 2px solid red;
@@ -19,6 +25,7 @@
 .footer_juegos {
   background: linear-gradient(to bottom, #2d132c, #050308);
   padding: 1em;
+  
 }
 .resumen_juegp{
   font-size: 3vw;
@@ -30,14 +37,20 @@
   background-color: #151515;
 }
 .img_trailer{
-  z-index: -1;
+  z-index: 1;
 }
 .img_trailer:hover{
+  visibility: hidden;
+  z-index: -1; 
+  transition: .5s;
+  box-shadow: 0px 0px 15px 7px #C72C41;   
 
 }
 
-.img_gif1{
-        
+.img_gif:hover{
+  box-shadow: 0px 0px 15px 7px #C72C41;   
+  transition: .5s;
+  z-index: 1;
 }
 
 .footer_redes {
@@ -89,6 +102,34 @@
   text-align: center;
 }
 
+
+.button_verMas{
+  text-decoration: none;
+  text-shadow: 1px 1px 2px black, 0 0 1em #2d132c, 0 0 0.2em #2d132c;
+  color:#ffffffc2;
+  padding: .5em;
+  transition: 0.5s;
+  background:linear-gradient(0deg,#801336,#22010c);
+  padding:1em 4em ;
+  border-radius: 5em;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20em;
+}
+.button_verMas:hover{
+  text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
+  transition: 0.5s;
+  color:#ffffffc2;
+  box-shadow: 0px 0px 15px 7px #151515;
+  transition: 0.5s;
+}
+.fondo{
+  background-color: #151515;
+  padding: 2em;
+}
+
 @media (max-width:600px) {
   .footer_redes{
     font-size: 1.5em;
@@ -97,5 +138,7 @@
 .footer_redes a:hover{
   box-shadow: none;
 }
-  
+.button_verMas{
+  width: 10em;
+}
 }
