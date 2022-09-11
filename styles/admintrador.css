@@ -1,0 +1,472 @@
+:root {
+    --primary-color: white;
+    --secondary-color: rgb(61,68,73);
+    --highlight-color: #3282b8;
+    --dt-padding: 12px;
+    --dt-padding-s: 6px;
+    --dt-padding-xs: 2px;
+    --dt-border-radius: 3px;
+    --dt-background-container: var(--primary-color);
+    --dt-boder-color: var(--secondary-color);
+    --dt-bg-active-color: var(--highlight-color);
+    --dt-text-color-active-button: beige;
+    --dt-hover-cell-color: #ee4640b4;
+}
+
+body {
+    background: linear-gradient(180deg, rgba(136, 20, 58, 0.55) 0%, rgba(191, 125, 124, 0.275) 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.header-datatable{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 37px;
+    width: 80%;
+}
+
+#space {
+    width: 150px;
+}
+
+.button-new-game {
+    width: 150px;
+    height: 50px;
+    background: #C72C41;
+    border-radius: 20px;
+    font-size: 20px;
+    border-color: #C72C41;
+    color: white;
+    cursor: pointer;
+}
+
+h1{
+    color: white;
+}
+
+.datatable-container {
+    background-color: var(--primary-color);
+    border-radius: var(--dt-border-radius);
+    width: 80%;
+    font-size: 18px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.datatable-container .header-tools {
+    border-bottom: solid 1px var(--dt-boder-color);
+    padding: var(--dt-padding);
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+}
+
+.datatable-container .header-tools .search {
+    width: 200px;
+    height: 30px;
+}
+
+.datatable-container .header-tools .search .search-input{
+    width: 100%;
+    height: inherit;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: var(--dt-border-radius);
+    border: solid 1px var(--dt-boder-color);
+    text-align: center;
+}
+
+.datatable-container .footer-tools {
+    padding: var(--dt-padding);
+    display: flex;
+    align-items: baseline;
+}
+
+.datatable-container .footer-tools .list-items {
+    width: 50%;
+}
+
+.datatable-container .footer-tools .pages {
+    margin-left: auto;
+    margin-right: 0;
+    width: 50%;
+}
+
+.datatable-container .footer-tools .pages .pagination {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+}
+
+.datatable-container .footer-tools .pages .pagination li {
+    display: inline-block;
+    margin: 0 var(--dt-padding-xs);
+}
+
+.datatable-container .footer-tools .pages .pagination li button{
+    width: 100%;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: var(--dt-border-radius);
+    background: transparent;
+    cursor: pointer;
+}
+
+.datatable-container .footer-tools .pages .pagination li button:hover{
+    background: var(--dt-bg-active-color);
+    color: var(--dt-text-color-active-button);
+}
+
+.datatable-container .footer-tools .pages .pagination li span.active  {
+    background-color: var(--dt-bg-active-color);
+    border-radius: var(--dt-border-radius);
+    color: var(--dt-text-color-active-button);
+}
+
+.datatable-container .footer-tools .pages .pagination li span,
+.datatable-container .footer-tools .pages .pagination li button {
+    padding: var(--dt-padding-s) var(--dt-padding);
+}
+
+.datatable-container .footer-tools .pages .pagination-responsive {
+    display: none;
+}
+
+.datatable-container .footer-tools .pages .pagination-responsive ul {
+    list-style: none;
+    height: 40px;
+    line-height: 40px;
+}
+
+.datatable-container .footer-tools .pages .pagination-responsive ul li{
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.datatable-container .footer-tools .pages .pagination-responsive ul li button{
+    padding: 5px 10px;
+    box-sizing: border-box;
+    color: #3282b8;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid rgba(128, 128, 128, 0.589);
+    border-radius: 3px;
+}
+
+.datatable-container .footer-tools .pages .pagination-responsive ul li button:hover {
+    background-color: rgba(128, 128, 128, 0.384);
+}
+
+.datatable-container .datatable {
+    border-collapse: collapse;
+    width: 100%; /*La tabla ocupa el 100% de su contenedor*/
+}
+
+.datatable-container .datatable,
+.datatable-container .datatable th,
+.datatable-container .datatable td {
+    padding: var(--dt-padding) var(--dt-padding);
+}
+
+.table-checkbox{
+    text-align: center;
+}
+
+.datatable-container .datatable th {
+    font-weight: bolder;
+    text-align: left;
+    border-bottom: solid 1px var(--dt-boder-color);
+}
+
+.datatable-container .datatable tbody tr:hover {
+    background-color: var(--dt-hover-cell-color)
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete, .edit, .highlight  {
+    cursor: pointer;
+}
+
+.title-game {
+    display: none;
+}
+
+/*********ESTILOS PARA LA VENTANA MODAL*********/
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #111111bd;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s .9s;
+    --transform: translateY(-100vh);
+    --transition: transform .8s;
+}
+
+.modal--show {
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .6s;
+    --transform: translateY(0);
+    --transition: transform .8s .8s;
+}
+
+.modal-container {
+    margin: 50px auto;
+    width: 80%;
+    max-height: 768px;
+    max-width: 768px;
+    height: 80%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    padding: 2.5em 2em;
+    transform: var(--transform);
+    transition: var(--transition);
+}
+
+.modal-body {
+    width: 100%;
+    overflow-y: auto;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+}
+
+.modal-body-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.change-direction {
+    flex-direction: column;
+}
+
+.change-aling {
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+}
+
+.modal-body-row label, .modal-body-column label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.modal-body-column input {
+    width: 250px;
+    height: 30px;
+    font-size: 15px;
+}
+
+.modal-body-row textarea, .modal-body-column textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+}
+
+.modal-footer {
+    width: 100%;
+    display: flex;
+    justify-content:flex-end;
+    margin-top: 10px;
+}
+
+.modal-footer-button {
+    padding: 10px 25px;
+    margin-left: 30px;
+    border: 0;
+    font-size: 20px;
+    outline: none;
+    background-color: #ee4640;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-footer-button:hover {
+    background-color: #a82d29b0;
+}
+
+/*****Estilos para ingresar imagenes y videos*****/
+.preview {
+    border: 5px dashed #ddd;
+    height: inherit;
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow-y: auto;
+}
+
+#preview-title, #selectedFiles {
+    font-size: 20px;
+    margin: 5px;
+}
+
+#selectedFiles {
+    padding: 10px 25px;
+    align-self: flex-end;
+    font-size: 15px;
+    border: 0;
+    outline: none;
+    background-color: #5256ad;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.file-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+
+@media (max-width: 1200px) { 
+    .container {
+        width: 100%;
+    }
+
+    #datatable-title {
+        font-size: 25px;
+        padding-bottom: 20px;
+    }
+
+    .header-datatable {
+        font-size: 25px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button-new-game {
+        align-self: flex-end;
+    }
+
+    .modal-container {
+        padding: 1.5srem 1.5rem;
+     }
+
+}
+
+@media (max-width: 768px) {
+    
+    .container {
+        width: 80%;
+    }
+
+    .header-datatable {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    #space {
+        display: none;
+    }
+
+    .datatable-container {
+        width: 100%;
+    }
+
+    .header-tools {
+        justify-content: center!important;
+    }
+
+    thead, td {
+        display: none;
+    }
+
+    .title-game {
+        display: flex;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .modal-container {
+        padding: 2em 1.5em;
+    }
+
+    .modal-title {
+        font-size: 1rem;
+    }
+    .modal-body-row {
+        flex-direction: column;
+    }
+
+    .modal-body-row label, .modal-body-column label {
+        margin-top: 5px;
+    }
+
+    .modal-body-column input {
+        width: 100%;
+    }
+
+    .modal-footer {
+        padding-top: 50px;
+    }
+
+    .modal-footer-button {
+        padding: 5px 12.5px;
+        margin-left: 15px;
+    }
+    
+}
+
+@media (max-width: 576px) {
+    .button-new-game {
+        align-self:center;
+    }
+
+    .list-items {
+        display: none;
+    }
+
+    #drop-title, .drop-area span {
+        display: none;
+    }
+
+    #datatable-title {
+        font-size: 22.5px;
+    }
+    
+    .pages {
+        width: 100%!important;
+    }
+
+    .pagination {
+        display: none!important;
+    }
+
+    .pagination-responsive {
+        display: flex!important;
+        justify-content: center;
+    }
+
+}
