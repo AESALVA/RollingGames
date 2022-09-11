@@ -171,13 +171,13 @@ section {
 .card_perfil:hover .button_verMas{
   box-shadow: 0px 0px 15px 7px #151515;
   border-radius: 15em;
-
+  transition: 0.5s;
 }
 .card_perfil img {
   max-width: 40em;
 }
 .card_perfil p {
-  padding-top: 2em;
+  padding: 1.5em 0;
   font-size: 1.5em;
   text-shadow: 1px 1px 2px black, 0 0 1em #2d132c, 0 0 0.2em #2d132c;
   
@@ -197,6 +197,7 @@ section {
   text-shadow: 1px 1px 2px black, 0 0 1em #2d132c, 0 0 0.2em #2d132c;
   color:#ffffffc2;
   padding: .5em;
+  transition: 0.5s;
 
 }
 .button_verMas:hover{
@@ -204,6 +205,8 @@ section {
   transition: 0.5s;
   color:#ffffffc2;
   box-shadow: 0px 0px 15px 7px #151515;
+  transition: 0.5s;
+
 }
 
 @media (max-width: 1000px){

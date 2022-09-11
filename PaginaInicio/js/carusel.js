@@ -190,7 +190,6 @@ function createCardsTwo(data) {
 }
 
 
-createCards(DATA_REMARKABLE);
 
 createCardsTwo(DATA_REMARKABLE);
 
