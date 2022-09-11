@@ -13,6 +13,7 @@
       rel="stylesheet"
       href="/RollingGames/css/csslogin/styles.css"
     />
+    <link rel="stylesheet" href="./styles/navbar.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -33,8 +34,53 @@
     />
   </head>
   <body>
-    <header>
-      <div class="frase">AQUI VA EL HEADER</div>
+      <header class="header">
+        <nav class="nav">
+          <!--Logo-->
+          <a href="#" class="logo">
+            <img src="./assests/Logo.png" alt="Logo Rolling Games" />
+          </a>
+          <!--Boton hamburguesa-->
+          <button class="nav-toggle hide" aria-label="Abrir menú">
+            <span id="bars">
+              <i class="fa-solid fa-bars fa-lumos"></i>
+            </span>
+            <span id="cross" class="hide">
+              <i class="fa-solid fa-xmark"></i>
+            </span>
+          </button>
+          <!--Menu-->
+          <ul class="nav-menu">
+            <li class="nav-menu-item">
+              <a href="#" class="nav-menu-link nav-link">Inicio |</a>
+            </li>
+            <li class="nav-menu-item">
+              <a href="#" class="nav-menu-link nav-link">Contacto |</a>
+            </li>
+            <li class="nav-menu-item">
+              <a href="#" class="nav-menu-link nav-link">Acerca de |</a>
+            </li>
+            <li class="nav-menu-item hide">
+              <a href="#" class="nav-menu-link nav-link">Administración |</a>
+            </li>
+            <li class="nav-menu-item" id="menuLogin">
+              <a href="#" class="nav-menu-link nav-link"
+                >Login <i class="fa-solid fa-angle-down" id="menu-arrow"></i> |</a
+              >
+              <ul class="menu-nesting hide" id="menuInsideLogin">
+                <li class="menu-inside">
+                  <a href="#" class="nav-menu-link-inside">Iniciar Sesion</a>
+                </li>
+                <li class="menu-inside">
+                  <a href="#" class="nav-menu-link-inside">Registrarse</a>
+                </li>
+                <li class="menu-inside">
+                  <a href="#" class="nav-menu-link-inside">Salir</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
     </header>
     <main>
       <div class="conteiner_principal">
@@ -49,25 +95,25 @@
                 </div>
                 <form class="formulario">
                     <h2 class="create-account">Crear una cuenta</h2>
-                    <input type="text" placeholder="Nombre" maxlength="50"
+                    <input id="nombre_registro" type="text" placeholder="Nombre" maxlength="50"
                     required>
-                    <input type="phone" placeholder="Teléfono" maxlength="12"
+                    <input id="telefono_registro" type="phone" placeholder="Teléfono" maxlength="12"
                     required>
-                    <input type="email" placeholder="Email" maxlength="50"
+                    <input id="email_registro" type="email" placeholder="Email" maxlength="50"
                     required>
-                    <input type="password" placeholder="Contraseña" maxlength="40"
+                    <input id="password_registro" type="password" placeholder="Contraseña" maxlength="40"
                     required>
-                    <input type="button" value="Registrarse">
+                    <input id="boton_registro" type="button" value="Registrarse">
                 </form>
             </div>
             <div class="container-form sign-in">
                 <form class="formulario">
                     <h2 class="create-account">Iniciar Sesión</h2>
-                    <input type="email" placeholder="Email" maxlength="50"
+                    <input id="email_login" type="email" placeholder="Email" maxlength="50"
                     required>
-                    <input type="password" placeholder="Contraseña" maxlength="40"
+                    <input id="password_login" type="password" placeholder="Contraseña" maxlength="40"
                     required>
-                    <input type="button" value="Iniciar Sesión">
+                    <input id="boton_login" type="button" value="Iniciar Sesión">
                     <a href="./recuperar_clave.html">
                         <input type="button" class="btn btn-danger" value="Recuperar Contraseña">
                      </a>
@@ -109,18 +155,11 @@
 
     <!-- JavaScript Bundle with Popper -->
     <script src = "./javascript/main.js"></script>
+    <script src="./script/navbar.js" defer></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
-    <script>
-      const popoverTriggerList = document.querySelectorAll(
-        '[data-bs-toggle="popover"]'
-      );
-      const popoverList = [...popoverTriggerList].map(
-        (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
-      );
-    </script>
   </body>
 </html>
