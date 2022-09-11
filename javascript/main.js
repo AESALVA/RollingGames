@@ -312,6 +312,9 @@ function createPage(data, id) {
           alt="imgDiablo3"
         />
       </div>`;
+      const button = document.createElement('a');
+      button.innerHTML=`<div class="fondo"><a class="button_verMas" target="_parent" href="">COMPRAR</a></div>`;
+      section3.appendChild(button);
 
       conteiner.appendChild(section3);
       document.title = DATA_GAMES[index].name;
