@@ -1,0 +1,57 @@
+@font-face {
+    font-family:marioBros;
+    src: url(/RollingGames/AssetData/errorFont/marioBros.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bg_conteiner{
+background:linear-gradient(to bottom, #2d132c, #050308);
+width: 100vw;
+height: 100%;
+}
+.p_conteiner{
+    font-family:'marioBros' ;
+    font-size: 3em;
+    color: #801336;
+    text-align: center;
+}
+.p_conteiner h1{
+    padding-bottom  : 1em;
+}
+.p_conteiner h2{
+    padding: 1em;
+    margin-bottom: 1em;
+}
+.p_conteiner a{
+    padding: 1em;
+    position: relative;
+    color: #801336;
+
+}
+
+img{
+    width: 100vw;
+    opacity: .2;
+    position: absolute;
+}
+@media (max-width:1400px) {
+    .p_conteiner{
+        font-size: 1em;
+    }
+}
+
+@media (max-width:600px) {
+    .p_conteiner{
+        font-size: .8em;
+    }
+
+}
