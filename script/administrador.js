@@ -1,4 +1,48 @@
 // ---------------------------------------------------------------------------------------------------------
+/*********Codigo para cargar juegos del localStorage a la tabla**********/
+let MOCKED_DATA;
+
+document.addEventListener('DOMContentLoaded', () => updateTable());
+
+const updateTable = () => {
+    const tableGames = document.getElementById('datatable-tbody');
+
+    //Dejo vacio la tabla y vuelvo a cargar
+    tableGames.innerHTML= "";
+
+    MOCKED_DATA= JSON.parse(localStorage.getItem('MOCKED_DATA'));
+
+    MOCKED_DATA.forEach(game => {
+        //Agrego el juego a la tabla
+        let newRow = document.createElement('tr');
+        newRow.innerHTML= `<td class="title-game">${game.name}</td>
+        <td>${game.id}</td>
+        <td>${game.name}</td>
+        <td>Falta agregar en el modal</td>
+        <td>${game.resumen}</td>
+        <td class="table-checkbox">
+          <input type="checkbox" name="" id="" />
+        </td>
+        <td>
+          <span class="options">
+            <span class="delete" onclick="deleteGame('${game.id}')"
+              ><i class="fa-solid fa-trash-can"></i
+            ></span>
+            <span class="edit" onclick="editGame('${game.id}')"
+              ><i class="fa-solid fa-pen-to-square"></i
+            ></span>
+            <span class="highlight" onclick= "featuredGame('${game.id}')"
+              ><i class="fa-solid fa-star"></i
+            ></span>
+          </span>
+        </td>
+      </tr>`;
+
+      tableGames.appendChild(newRow);
+    });
+};
+
+// ---------------------------------------------------------------------------------------------------------
 /*********Codigo para la carga de los archivos**********/
 const button = document.querySelector('#selectedFiles');
 const input = document.querySelector('#input-file');
@@ -116,9 +160,9 @@ addNewGame.addEventListener('click',  (e) => {
 
         //Agrego el juego a la tabla
         let newRow = document.createElement('tr');
-        newRow.innerHTML= `<td class="title-game">${newGame.titulo}</td>
+        newRow.innerHTML= `<td class="title-game">${newGame.name}</td>
         <td>${newGame.id}</td>
-        <td>${newGame.titulo}</td>
+        <td>${newGame.name}</td>
         <td>Falta agregar en el modal</td>
         <td>${newGame.resumen}</td>
         <td class="table-checkbox">
@@ -132,7 +176,7 @@ addNewGame.addEventListener('click',  (e) => {
             <span class="edit" onclick="editGame('${newGame.id}')"
               ><i class="fa-solid fa-pen-to-square"></i
             ></span>
-            <span class="highlight" onclick= "featuredGame(${newGame})"
+            <span class="highlight" onclick= "featuredGame('${newGame.id}')"
               ><i class="fa-solid fa-star"></i
             ></span>
           </span>
@@ -197,7 +241,8 @@ const showAlert = (typeAlert, message) => {
 /**********Codigo para eliminar un juego**********/
 const deleteGame= (id) => {
     console.log(`se elimino el juego ${id}`);
-    databaseGames(id, 'delete');
+    const remove= searchGame(id);
+    databaseGames(remove, 'delete');
 };
 
 // ---------------------------------------------------------------------------------------------------------
@@ -237,24 +282,47 @@ const searchGame= (idGame) => {
 
 // ---------------------------------------------------------------------------------------------------------
 /*********Codigo para el juego destacado**********/
-const featuredGame= (game) => {
-    //Guardo registro del juego destacado en el localStorage
-    localStorage.setItem("juegoDestacado", JSON.stringify(game));
+const featuredGame= (idGame) => {
+
+    moveGames(idGame);
+
+    //Guardo registro del nuevo juego destacado en el localStorage
+    localStorage.setItem("juegoDestacado", JSON.stringify(idGame));
 }
+const moveGames= (idGame) => {
+    //Me guardo el nombre del actual juego destacado
+    let idFeatured= JSON.parse(localStorage.getItem("juegoDestacado"));
+    let currentFeatured= searchGame(idFeatured);
+    let newCurrentFeatured= searchGame(idGame);
+
+    let indexIdGame= MOCKED_DATA.indexOf(newCurrentFeatured);
+    let indexIdFeatured= MOCKED_DATA.indexOf(currentFeatured);
+
+    //Hago el swap
+    MOCKED_DATA[indexIdFeatured] = newCurrentFeatured;
+    MOCKED_DATA[indexIdGame]= currentFeatured;
+
+    databaseGames(null, 'update');
+};
 
 // ---------------------------------------------------------------------------------------------------------
-/**********Consulto el localStorage**********/
-const MOCKED_DATA= JSON.parse(localStorage.getItem('products'));
-const databaseGames= (idGame, action) => {
+/**********Acciones sobre el localStorage**********/
+const databaseGames= (game, action) => {
 
     if(action === "insert") {
         //Agrego el juego
-        MOCKED_DATA.push(idGame);
+        MOCKED_DATA.push(game);
     } else if (action === "delete") {
-        const index= MOCKED_DATA.indexOf(idGame);
+        const index= MOCKED_DATA.indexOf(game);
         MOCKED_DATA.splice(index, 1);
+    }else if(action === "update") {
+
     }
     
+    //Cualquiera que sea la accion lo guardo en el localstorage
+    localStorage.setItem('MOCKED_DATA', JSON.stringify(MOCKED_DATA));
+
+    updateTable();
 
     console.log(MOCKED_DATA);
 };
