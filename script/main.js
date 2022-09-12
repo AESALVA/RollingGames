@@ -315,7 +315,7 @@ function createPage(data, id) {
       const button = document.createElement('a');
       const button2 = document.createElement('a');
       button.innerHTML=`<div class="fondo"><a class="button_verMas" target="_parent" href="">COMPRAR</a></div>`;
-      button2.innerHTML=`<div class="fondo"><a class="button_verMas" target="_parent" href="/RollingGames/PaginaInicio/inicio/inicio.html">VOLVER</a></div>`;
+      button2.innerHTML=`<div class="fondo"><a class="button_verMas" target="_parent" href="/RollingGames/inicio.html">VOLVER</a></div>`;
       section3.appendChild(button);
       section3.appendChild(button2);
       conteiner.appendChild(section3);
