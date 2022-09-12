@@ -1,12 +1,4 @@
 // ---------------------------------------------------------------------------------------------------------
-/*********Codigo para el boton modificar juego**********/
-const editButton= document.querySelector('.edit');
-
-editButton.addEventListener('click', () => {
-    modal.classList.add('modal--show');
-});
-
-// ---------------------------------------------------------------------------------------------------------
 /*********Codigo para la carga de los archivos**********/
 const button = document.querySelector('#selectedFiles');
 const input = document.querySelector('#input-file');
@@ -118,6 +110,36 @@ addNewGame.addEventListener('click',  (e) => {
             historia: textAreaHistory.value,
             resumen: textAreaSummary.value,
         };
+
+        databaseGames(newGame, 'insert');
+
+        //Agrego el juego a la tabla
+        let newRow = document.createElement('tr');
+        newRow.innerHTML= `<td class="title-game">${newGame.titulo}</td>
+        <td>${newGame.id}</td>
+        <td>${newGame.titulo}</td>
+        <td>Falta agregar en el modal</td>
+        <td>${newGame.resumen}</td>
+        <td class="table-checkbox">
+          <input type="checkbox" name="" id="" />
+        </td>
+        <td>
+          <span class="options">
+            <span class="delete" onclick="deleteGame('${newGame.id}')"
+              ><i class="fa-solid fa-trash-can"></i
+            ></span>
+            <span class="edit" onclick="editGame('${newGame.id}')"
+              ><i class="fa-solid fa-pen-to-square"></i
+            ></span>
+            <span class="highlight"
+              ><i class="fa-solid fa-star"></i
+            ></span>
+          </span>
+        </td>
+      </tr>`;
+
+      const tableGames = document.getElementById('datatable-tbody');
+      tableGames.appendChild(newRow);
     
         //Muestro el juego por consola
         console.log(newGame);
@@ -125,7 +147,6 @@ addNewGame.addEventListener('click',  (e) => {
 
         //Muestro ventana de exito
         showAlert('success', inputTitleGame.value);
-        
     }
     
 });
@@ -169,6 +190,69 @@ const showAlert = (typeAlert, message) => {
              } 
         });
     }
+}
+
+// ---------------------------------------------------------------------------------------------------------
+/**********Codigo para eliminar un juego**********/
+const deleteGame= (id) => {
+    console.log(`se elimino el juego ${id}`);
+    databaseGames(id, 'delete');
 };
 
+// ---------------------------------------------------------------------------------------------------------
+/*********Codigo para el boton modificar juego**********/
+// const editButton= document.querySelector('.edit');
 
+// editButton.addEventListener('click', () => {
+//     modal.classList.add('modal--show');
+// });
+
+const editGame = (idGame) =>{
+
+    loadGameModal(idGame);
+
+    modal.classList.add('modal--show');
+
+    console.log(`Se edita el videojuego ${idGame}`);
+}
+
+//Esta funcion carga los datos del juego seleccionado en la ventana modal
+const loadGameModal = (idGame) => {
+    let game= searchGame(idGame);
+
+    inputId.value= game.id;
+    inputNameGame.value = game.name;
+    inputTitleGame.value = game.titulo;
+    textAreaHistory.value = game.historia;
+    textAreaSummary.value = game.resumen;
+};
+
+const searchGame= (idGame) => {
+    let game= "";
+
+    for(let i= 0; i < MOCKED_DATA.length; i++) {
+        if(MOCKED_DATA[i].id === idGame){
+            game= MOCKED_DATA[i];
+            break; 
+        }
+    }
+
+    return game;
+};
+
+// ---------------------------------------------------------------------------------------------------------
+/**********Consulto el localStorage**********/
+const MOCKED_DATA= JSON.parse(localStorage.getItem('products'));
+const databaseGames= (idGame, action) => {
+
+    if(action === "insert") {
+        //Agrego el juego
+        MOCKED_DATA.push(idGame);
+    } else if (action === "delete") {
+        const index= MOCKED_DATA.indexOf(idGame);
+        MOCKED_DATA.splice(index, 1);
+    }
+    
+
+    console.log(MOCKED_DATA);
+};
