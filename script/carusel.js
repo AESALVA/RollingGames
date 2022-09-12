@@ -1,4 +1,3 @@
-
 const DATA_REMARKABLE = [
   {
     img: "/RollingGames/AssetData/imagenes/spiderman.jpg",
@@ -57,10 +56,32 @@ const DATA_REMARKABLE = [
       "Después de que el rey de Ventormenta, Varian Wrynn, desapareciera misteriosamente, el alto señor Bolvar Fordragón sirvió como regente; sin embargo, su trabajo se vio entorpecido por las manipulaciones y el control mental del dragón negro Onyxia, quien gobernaba disfrazado como una humana perteneciente a la nobleza. Mientras los héroes investigaban las manipulaciones de Onyxia, antiguos enemigos aterrizaron en territorios situados por doquier para amenazar por igual a la Horda y la Alianza. ",
   },
 ];
-const conteinerRemarkable = document.querySelector('#seccion-destacado');
 
-function createRemarkable(data) {
+// ---------------------------------------------------------------------------------------------------------
+/**********Consulto el localStorage cuando se carga la pagina**********/
+document.addEventListener('DOMContentLoaded', () => {
+  createRemarkable();
+});
+
+
+// ---------------------------------------------------------------------------------------------------------
+/*********Codigo para sincronizar los cambios que hayan en el localstorage**********/
+window.addEventListener("storage", () => {
+  createRemarkable();
+});
+
+const conteinerRemarkable = document.querySelector("#seccion-destacado");
+
+function createRemarkable() {
   const remarkable = document.createElement("div");
+  const idGame = JSON.parse(localStorage.getItem("juegoDestacado"));
+  let data = searchGame(idGame);
+
+  //Para eliminar el juego destacado que esta
+  if (conteinerRemarkable.innerHTML != "") {
+    conteinerRemarkable.innerHTML = "";
+  }
+
   remarkable.innerHTML = ` <div id="card-destacado" class="card mb-0">
 				<div class="row g-0">
 				  <div class="col-md-8">
@@ -71,30 +92,26 @@ function createRemarkable(data) {
 					  <h5 class="card-title">${data.name}</h5>
 					  <p class="card-text text-muted">YA DISPONIBLE</p>
 					  <p class="card-text">${data.resumen}</p>
-					  <div class="fondo"><a id="ver-mas-btn" class="button_verMas" href="/RollingGames/detalleJuego.html" target:"_parent" onclick="createPage(DATA_GAMES, '${data.id}')" role="button">Ver más</a></div>
+					  <div class="fondo"><a id="ver-mas-btn" class="button_verMas" href="/RollingGames/detalleJuego.html" target:"_parent" onclick="selectedGame('${idGame}')" role="button">Ver más</a></div>
 					</div>
 				  </div>
 				</div>
 			</div>`;
-  localStorage.setItem("id", JSON.stringify(data.id));
   conteinerRemarkable.appendChild(remarkable);
 }
 
-createRemarkable(DATA_REMARKABLE[5]);
-
-const principal = document.getElementById('principal');
-const categoria = document.getElementById('categoria');
-const estrategia = document.getElementById('estrategia');
-const accion = document.getElementById('accion');
-const aventura = document.getElementById('aventura');
-const otros = document.getElementById('otros')
-
+const principal = document.getElementById("principal");
+const categoria = document.getElementById("categoria");
+const estrategia = document.getElementById("estrategia");
+const accion = document.getElementById("accion");
+const aventura = document.getElementById("aventura");
+const otros = document.getElementById("otros");
 
 function createCardsTwo(data) {
-  data.map((d)=>{
-    const cards = document.createElement('div');
-    const button = document.createElement('a');
-    cards.classList="card_perfil";
+  data.map((d) => {
+    const cards = document.createElement("div");
+    const button = document.createElement("a");
+    cards.classList = "card_perfil";
     cards.innerHTML = `
     <div class="img">
       <img
@@ -104,18 +121,17 @@ function createCardsTwo(data) {
     </div>
     <p>${d.name}</p>
   </div>`;
-  button.innerHTML=`<a class="button_verMas" target="_parent" href="/RollingGames/detalleJuego.html" onclick="selectedGame('${d.id}')"> VER MAS </a>`;
-  cards.appendChild(button);
-  categoria.appendChild(cards);
-  })
-  
+    button.innerHTML = `<a class="button_verMas" target="_parent" href="/RollingGames/detalleJuego.html" onclick="selectedGame('${d.id}')"> VER MAS </a>`;
+    cards.appendChild(button);
+    categoria.appendChild(cards);
+  });
 }
 
-function createCardsThree(data,id) {
-  data.map((d)=>{
-    const cards = document.createElement('div');
-    const button = document.createElement('a');
-    cards.classList="card_perfil";
+function createCardsThree(data, id) {
+  data.map((d) => {
+    const cards = document.createElement("div");
+    const button = document.createElement("a");
+    cards.classList = "card_perfil";
     cards.innerHTML = `
     <div class="img">
       <img
@@ -125,30 +141,41 @@ function createCardsThree(data,id) {
     </div>
     <p>${d.name}</p>
   </div>`;
-  button.innerHTML=`<a class="button_verMas" target="_parent" href="/RollingGames/detalleJuego.html" onclick="selectedGame('${d.id}')"> VER MAS </a>`;
-  cards.appendChild(button);
-  if (id===estrategia) {
-    estrategia.appendChild(cards);
-  }else if (id===accion){
-    accion.appendChild(cards);
-  }else if (id===aventura){
-    aventura.appendChild(cards);
-  }else{
-    otros.appendChild(cards);
-  }
-  })
-  
+    button.innerHTML = `<a class="button_verMas" target="_parent" href="/RollingGames/detalleJuego.html" onclick="selectedGame('${d.id}')"> VER MAS </a>`;
+    cards.appendChild(button);
+    if (id === estrategia) {
+      estrategia.appendChild(cards);
+    } else if (id === accion) {
+      accion.appendChild(cards);
+    } else if (id === aventura) {
+      aventura.appendChild(cards);
+    } else {
+      otros.appendChild(cards);
+    }
+  });
 }
 
 //Funcion que determina que juego se debe ver en detalleJuego.html
-const selectedGame= (id) => {
-  localStorage.setItem("id",JSON.stringify(id));
-  window.location.href= "/RollingGames/detalleJuego.html";
+const selectedGame = (id) => {
+  localStorage.setItem("id", JSON.stringify(id));
+  window.location.href = "/RollingGames/detalleJuego.html";
+};
+
+function searchGame(idGame) {
+  let game = "";
+
+  for (let i = 0; i < DATA_REMARKABLE.length; i++) {
+    if (DATA_REMARKABLE[i].id === idGame) {
+      game = DATA_REMARKABLE[i];
+      break;
+    }
+  }
+
+  return game;
 }
 
-
 createCardsTwo(DATA_REMARKABLE);
-createCardsThree(DATA_REMARKABLE,estrategia);
-createCardsThree(DATA_REMARKABLE,accion);
-createCardsThree(DATA_REMARKABLE,aventura)
-createCardsThree(DATA_REMARKABLE,otros);
+createCardsThree(DATA_REMARKABLE, estrategia);
+createCardsThree(DATA_REMARKABLE, accion);
+createCardsThree(DATA_REMARKABLE, aventura);
+createCardsThree(DATA_REMARKABLE, otros);

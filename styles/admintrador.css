@@ -311,6 +311,10 @@ h1{
     background-color: #a82d29b0;
 }
 
+.delete:hover, .edit:hover, .highlight:hover {
+    cursor: pointer;
+}
+
 /*****Estilos para ingresar imagenes y videos*****/
 .preview {
     border: 5px dashed #ddd;
