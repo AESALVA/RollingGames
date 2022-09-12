@@ -121,7 +121,12 @@ function handleClick(event) {
 
     if (validationOk) {
       alert('Validado');
-      location.href = '/RollingGames/diablo3.html';
+      if(email.value==='admin@gmail.com'){
+        location.href = '/RollingGames/administrador.html';
+      }
+      else{
+        location.href = '/RollingGames/inicio.html';
+      }
     } else {
       alert('Usuario o contraseña incorrectos');
     }
@@ -136,7 +141,7 @@ function validationSessionStorage() {
   );
   console.log(login);
   if (login === true) {
-    location.href = '/RollingGames/index.html';
+    location.href = '/RollingGames/inicio.html';
   }
 }
 
