@@ -74,9 +74,10 @@ const buttonCloseModal = document.getElementById('closeModal');
 buttonCloseModal.addEventListener('click', () => closeModal());
 
 const closeModal = () => {
+    const preview= document.querySelector('.preview');
+    preview.innerHTML= "";
+
     if(modifiedOrAddedGame) {
-        const preview= document.querySelector('.preview');
-        preview.innerHTML= "";
         cleanInputs([inputId, inputNameGame, inputSubNameGame,inputTitleGame, textAreaHistory, textAreaSummary]);
         modifiedOrAddedGame= false;
     }
@@ -131,7 +132,7 @@ addNewGame.addEventListener('click',  (e) => {
             <span class="edit" onclick="editGame('${newGame.id}')"
               ><i class="fa-solid fa-pen-to-square"></i
             ></span>
-            <span class="highlight"
+            <span class="highlight" onclick= "featuredGame(${newGame})"
               ><i class="fa-solid fa-star"></i
             ></span>
           </span>
@@ -201,12 +202,6 @@ const deleteGame= (id) => {
 
 // ---------------------------------------------------------------------------------------------------------
 /*********Codigo para el boton modificar juego**********/
-// const editButton= document.querySelector('.edit');
-
-// editButton.addEventListener('click', () => {
-//     modal.classList.add('modal--show');
-// });
-
 const editGame = (idGame) =>{
 
     loadGameModal(idGame);
@@ -239,6 +234,13 @@ const searchGame= (idGame) => {
 
     return game;
 };
+
+// ---------------------------------------------------------------------------------------------------------
+/*********Codigo para el juego destacado**********/
+const featuredGame= (game) => {
+    //Guardo registro del juego destacado en el localStorage
+    localStorage.setItem("juegoDestacado", JSON.stringify(game));
+}
 
 // ---------------------------------------------------------------------------------------------------------
 /**********Consulto el localStorage**********/
