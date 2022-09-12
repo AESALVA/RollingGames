@@ -211,9 +211,8 @@ const DATA_GAMES = [
 let MOCKED_DATA;
 
 document.addEventListener('DOMContentLoaded', () => {
-
   //En el caso de que el array no este cargado al localStorge
-  if(!localStorage.getItem('MOCKED_DATA')) {
+  if(localStorage.getItem('MOCKED_DATA') == "[]" || !localStorage.getItem('MOCKED_DATA')) {
     localStorage.setItem('MOCKED_DATA', JSON.stringify(DATA_GAMES));
   }
 
