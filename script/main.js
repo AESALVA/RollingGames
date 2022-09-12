@@ -24,6 +24,7 @@ const DATA_GAMES = [
       "/RollingGames/AssetData/Diablo3/trailer/diablo2.gif",
       "/RollingGames/AssetData/Diablo3/trailer/diablo3.gif",
     ],
+    disponible: true
   },
   {
     id: "hearthstone",
@@ -51,6 +52,7 @@ const DATA_GAMES = [
       "/RollingGames/AssetData/hearthstone/trailer/img2_juego.gif",
       "/RollingGames/AssetData/hearthstone/trailer/img3_juego.gif",
     ],
+    disponible: true
   },
   {
     id:"spiderman",
@@ -75,6 +77,7 @@ const DATA_GAMES = [
         "/RollingGames/AssetData/MarvelSpiderman/trailer/spiderman2.gif",
         "/RollingGames/AssetData/MarvelSpiderman/trailer/spiderman3.gif",
     ],
+    disponible: true
   },
   {
     id:"mortalkombat",
@@ -99,6 +102,7 @@ const DATA_GAMES = [
       "/RollingGames/AssetData/MortalKombatX/trailer/mortal3.gif",
       "/RollingGames/AssetData/MortalKombatX/trailer/mortal4.gif",
     ],
+    disponible: true
   },
   {
     id:"nfs",
@@ -123,6 +127,7 @@ const DATA_GAMES = [
       "/RollingGames/AssetData/NeedForSpeedHotPersuit/trailer/nfs2.gif",
       "/RollingGames/AssetData/NeedForSpeedHotPersuit/trailer/nfs3.gif",
     ],
+    disponible: true
   },
   {
     id:"overwatch",
@@ -147,6 +152,7 @@ const DATA_GAMES = [
       "/RollingGames/AssetData/OverWatch/Trailer/over2.gif",
       "/RollingGames/AssetData/OverWatch/Trailer/over3.gif",
     ],
+    disponible: true
   },
   {
     id:"speedstorm",
@@ -171,6 +177,7 @@ const DATA_GAMES = [
       "/RollingGames/AssetData/SpeedStorm/trailer/storm2.gif",
       "/RollingGames/AssetData/SpeedStorm/trailer/storm3.gif",
     ],
+    disponible: true
   },
   {
     id:"warcraft",
@@ -195,15 +202,32 @@ const DATA_GAMES = [
       "/RollingGames/AssetData/WorldOfWarCraft/Trailers/craft2.gif",
       "/RollingGames/AssetData/WorldOfWarCraft/Trailers/craft3.gif",
     ],
-    },
+    disponible: true
+    }
 ];
 
-const conteiner = document.getElementById("conteiner");
+// ---------------------------------------------------------------------------------------------------------
+/**********Consulto el localStorage cuando se carga la pagina**********/
+let MOCKED_DATA;
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  //En el caso de que el array no este cargado al localStorge
+  if(!localStorage.getItem('MOCKED_DATA')) {
+    localStorage.setItem('MOCKED_DATA', JSON.stringify(DATA_GAMES));
+  }
+
+  MOCKED_DATA= JSON.parse(localStorage.getItem('MOCKED_DATA'));
+  createPage(MOCKED_DATA,JSON.parse(localStorage.getItem("id")));
+});
+
 
 function createPage(data, id) {
+  const conteiner = document.getElementById("conteiner");
+
   data.map((d) => {
-    const index = DATA_GAMES.indexOf(d);
-    if (id === DATA_GAMES[index].id) {
+    const index = MOCKED_DATA.indexOf(d);
+    if (id === MOCKED_DATA[index].id) {
       const section = document.createElement("section");
       section.innerHTML = `<div
         id="carouselExampleControlsNoTouching"
@@ -319,30 +343,11 @@ function createPage(data, id) {
       section3.appendChild(button);
       section3.appendChild(button2);
       conteiner.appendChild(section3);
-      document.title = DATA_GAMES[index].name;
+      document.title = MOCKED_DATA[index].name;
     }
   });
 }
 
-createPage(DATA_GAMES,JSON.parse(localStorage.getItem('id')));
+// createPage(MOCKED_DATA,JSON.parse(localStorage.getItem('id')));
 
-/**
- * LOGIN
- */
-
- const $btnSignIn= document.querySelector('.sign-in-btn'),
- $btnSignUp = document.querySelector('.sign-up-btn'),  
- $signUp = document.querySelector('.sign-up'),
- $signIn  = document.querySelector('.sign-in');
-
-document.addEventListener('click', e => {
-if (e.target === $btnSignIn || e.target === $btnSignUp) {
-   $signIn.classList.toggle('active');
-   $signUp.classList.toggle('active')
-}
-});
-
-/**
- * LOGIN
- */
 

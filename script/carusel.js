@@ -57,7 +57,7 @@ const DATA_REMARKABLE = [
       "Después de que el rey de Ventormenta, Varian Wrynn, desapareciera misteriosamente, el alto señor Bolvar Fordragón sirvió como regente; sin embargo, su trabajo se vio entorpecido por las manipulaciones y el control mental del dragón negro Onyxia, quien gobernaba disfrazado como una humana perteneciente a la nobleza. Mientras los héroes investigaban las manipulaciones de Onyxia, antiguos enemigos aterrizaron en territorios situados por doquier para amenazar por igual a la Horda y la Alianza. ",
   },
 ];
-const conteinerRemarkable = document.getElementById("seccion-destacado");
+const conteinerRemarkable = document.querySelector('#seccion-destacado');
 
 function createRemarkable(data) {
   const remarkable = document.createElement("div");
@@ -104,8 +104,7 @@ function createCardsTwo(data) {
     </div>
     <p>${d.name}</p>
   </div>`;
-  button.innerHTML=`<a class="button_verMas" target="_parent" href="/RollingGames/detalleJuego.html"> VER MAS </a>`;
-  button.addEventListener("click",()=> localStorage.setItem("id",JSON.stringify(d.id)));
+  button.innerHTML=`<a class="button_verMas" target="_parent" href="/RollingGames/detalleJuego.html" onclick="selectedGame('${d.id}')"> VER MAS </a>`;
   cards.appendChild(button);
   categoria.appendChild(cards);
   })
@@ -126,8 +125,7 @@ function createCardsThree(data,id) {
     </div>
     <p>${d.name}</p>
   </div>`;
-  button.innerHTML=`<a class="button_verMas" target="_parent" href="/RollingGames/detalleJuego.html"> VER MAS </a>`;
-  button.addEventListener("click",()=> localStorage.setItem("id",JSON.stringify(d.id)));
+  button.innerHTML=`<a class="button_verMas" target="_parent" href="/RollingGames/detalleJuego.html" onclick="selectedGame('${d.id}')"> VER MAS </a>`;
   cards.appendChild(button);
   if (id===estrategia) {
     estrategia.appendChild(cards);
@@ -142,7 +140,11 @@ function createCardsThree(data,id) {
   
 }
 
-
+//Funcion que determina que juego se debe ver en detalleJuego.html
+const selectedGame= (id) => {
+  localStorage.setItem("id",JSON.stringify(id));
+  window.location.href= "/RollingGames/detalleJuego.html";
+}
 
 
 createCardsTwo(DATA_REMARKABLE);
