@@ -1,56 +1,56 @@
 
 const DATA_REMARKABLE = [
   {
-    img: "/RollingGames/PaginaInicio/inicio/imagenes/spiderman.jpg",
+    img: "/RollingGames/AssetData/imagenes/spiderman.jpg",
     id: "spiderman",
     name: "Marvel's SpiderMan",
     resumen:
       "Desde el parkour hasta las interacciones según el entorno, pasando por el nuevo sistema de combate y una acción espectacular, jugarás con Spider-Man como nunca antes has hecho hasta ahora.",
   },
   {
-    img: "/RollingGames/PaginaInicio/inicio/imagenes/diablo3.webp",
+    img: "/RollingGames/AssetData/imagenes/diablo3.webp",
     id: "diablo",
     name: "Diablo III & Reaper of Souls",
     resumen:
       "Al arcángel Tyrael se lo da por muerto, y la humanidad está sola para afrontar las consecuencias de sus actos Los fragmentos de la Piedra del Mundo aún dotados de un inmenso poder, contaminan la tierra y los esbirros de Diablo esperan poder controlar ese poder para que el Señor del Terror pueda regresar",
   },
   {
-    img: "/RollingGames/PaginaInicio/inicio/imagenes/hearthstone.jpg",
+    img: "/RollingGames/AssetData/imagenes/hearthstone.jpg",
     id: "hearthstone",
     name: "HearthStone",
     resumen:
       "Todos pueden jugar Hearthstone. Practica tus habilidades en partidas casuales, sube de rango en el modo clasificado, disfruta de un giro divertido en las Grescas de la taberna, pon a prueba tu suerte en la Arena, juega aventuras en solitario contra adversarios malignos e ingeniosos controlados por la computadora y mucho, mucho más",
   },
   {
-    img: "/RollingGames/PaginaInicio/inicio/imagenes/hotpursuit.jpg",
+    img: "/RollingGames/AssetData/imagenes/hotpursuit.jpg",
     id: "nfs",
     name: "Need For Speed Hot Persuit",
     resumen:
       "Need for Speed™ Hot Pursuit Remastered ofrece un juego de carreras atemporal actualizado para la generación de hardware actual con gráficos mejorados.",
   },
   {
-    img: "/RollingGames/PaginaInicio/inicio/imagenes/Mortal-Kombat-X.webp",
+    img: "/RollingGames/AssetData/imagenes/Mortal-Kombat-X.webp",
     id: "mortalkombat",
     name: "Mortal Kombat X",
     resumen:
       "Tras la desaparición de Shao Kahn, el dios caído Shinnok ataca la Tierra con su ejército de criaturas del Inframundo, incluidos los guerreros del Reino de la Tierra que fallecieron en los sucesos de Mortal Kombat 9.",
   },
   {
-    img: "/RollingGames/PaginaInicio/inicio/imagenes/robots.jpg",
+    img: "/RollingGames/AssetData/imagenes/robots.jpg",
     id: "overwatch",
     name: "OverWatch",
     resumen:
       "Cuando entras a una partida de Overwatch, debes elegir un héroe con el cual jugar. Tal vez te atraiga un simio genéticamente alterado de la luna. Tal vez prefieras a una luchadora por la libertad que viaja en el tiempo. ¿O es más tu estilo un DJ que lleva su música al campo de batalla? No importa quién quieras ser, hay un héroe de Overwatch para ti.",
   },
   {
-    img: "/RollingGames/PaginaInicio/inicio/imagenes/speedstorm.webp",
+    img: "/RollingGames/AssetData/imagenes/speedstorm.webp",
     id: "speedstorm",
     name: "Speed Storm",
     resumen:
       "La acción nunca se ralentiza gracias al nuevo contenido de temporada siempre a la vuelta de la esquina. Nuevos corredores, nuevas pistas y coleccionables aparecerán regularmente.",
   },
   {
-    img: "/RollingGames/PaginaInicio/inicio/imagenes/warcraft.jpg",
+    img: "/RollingGames/AssetData/imagenes/warcraft.jpg",
     id: "warcraft",
     name: "World Of WarCraft",
     resumen:
