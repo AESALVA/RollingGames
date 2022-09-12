@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rolling Games</title>
+    <link rel="stylesheet" href="/RollingGames/styles/navbar.css">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -27,9 +28,54 @@
     ></script>
   </head>
   <body>
-    <header>
-      <nav id="nav-bar" class="nav-bar"></nav>
-    </header>
+    <header class="header">
+      <nav class="nav">
+        <!--Logo-->
+        <a href="/RollingGames/inicio.html" class="logo">
+          <img src="./AssetData/Logo/Logo.png" alt="Logo Rolling Games" />
+        </a>
+        <!--Boton hamburguesa-->
+        <button class="nav-toggle hide" aria-label="Abrir menú">
+          <span id="bars">
+            <i class="fa-solid fa-bars fa-lumos"></i>
+          </span>
+          <span id="cross" class="hide">
+            <i class="fa-solid fa-xmark"></i>
+          </span>
+        </button>
+        <!--Menu-->
+        <ul class="nav-menu">
+          <li class="nav-menu-item">
+            <a href="#" class="nav-menu-link nav-link">Inicio |</a>
+          </li>
+          <li class="nav-menu-item">
+            <a href="#" class="nav-menu-link nav-link">Contacto |</a>
+          </li>
+          <li class="nav-menu-item">
+            <a href="/RollingGames/aboutus.html" class="nav-menu-link nav-link">Acerca de |</a> 
+          </li>
+          <li class="nav-menu-item hide">
+            <a href="#" class="nav-menu-link nav-link">Administración |</a>
+          </li>
+          <li class="nav-menu-item" id="menuLogin">
+            <a href="#" class="nav-menu-link nav-link"
+              >Login <i class="fa-solid fa-angle-down" id="menu-arrow"></i> |</a
+            >
+            <ul class="menu-nesting hide" id="menuInsideLogin">
+              <li class="menu-inside">
+                <a href="#" class="nav-menu-link-inside">Iniciar Sesion</a>
+              </li>
+              <li class="menu-inside">
+                <a href="#" class="nav-menu-link-inside">Registrarse</a>
+              </li>
+              <li class="menu-inside">
+                <a href="#" class="nav-menu-link-inside">Salir</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+  </header>
     <main>
       <section id="seccion-destacado" class="seccion-destacado"></section>
 

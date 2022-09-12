@@ -14,6 +14,7 @@ color:#c72c41;
 }
 body {
   background:linear-gradient(0deg,#801336,#22010c);
+  margin-top: 6em;
 }
 
 .nav-bar {
