@@ -136,10 +136,10 @@ section{
     font-size: 1.5em;
   }
 
-.footer_redes a:hover{
-  box-shadow: none;
-}
-.button_verMas{
-  width: 10em;
-}
+  .footer_redes a:hover{
+    box-shadow: none;
+  }
+  .button_verMas{
+    width: 10em;
+  }
 }
