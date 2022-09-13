@@ -41,20 +41,46 @@ iframe {
     height: 220px;
 }
 
-.back {
+.field, textarea {
     background: rgba(217, 217, 217, 0.6);
 }
 
-.inputData{
+.field {
     display: block;
-    border: none;
+    position: relative;
     margin-bottom: 31px;
     width: 320px;
     height: 50px;
 }
 
-.center{
+.inputData{
+    background: transparent;
+    width: inherit;
+    height: inherit;
     text-align: center;
+    border-color: transparent;
+}
+
+.icons-email, .icons-text {
+    position: absolute;
+    right: 15px;
+    top: 20px;
+}
+
+.correct {
+    border-color: #27ae60;
+}
+
+.error {
+    border-color: #e74c3c;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
 }
 
 textarea {
@@ -62,6 +88,11 @@ textarea {
     height: 194px;
     resize: none;
     border: none;
+}
+
+/*Oculto el placeholder del textarea*/
+textarea::placeholder {
+    color: transparent;
 }
 
 #ubication {
@@ -84,6 +115,16 @@ textarea {
     color: white;
     font-size: 16px;
     margin-top: 40px;
+    
+}
+
+.button:hover {
+    cursor:pointer;
+    background-color: #c72c41da;
+}
+
+.button:active {
+    background-color: #6b0c19;
 }
 
 /*Para dispositivos que tengan menos de 768px*/
@@ -100,7 +141,7 @@ textarea {
         width: 200px;
     }
 
-    .inputData{
+    .field{
         width: 200px;
     }
 

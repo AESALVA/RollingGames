@@ -11,6 +11,8 @@
       src="https://kit.fontawesome.com/574da1cd36.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="./AssetData/Sweet/sweetalert2.css">
+    <script src="./AssetData/Sweet/sweetalert2.min.js" defer></script>
     <title>Contacto</title>
   </head>
   <body>
@@ -32,16 +34,16 @@
         <!--Menu-->
         <ul class="nav-menu">
           <li class="nav-menu-item">
-            <a href="#" class="nav-menu-link nav-link">Inicio |</a>
+            <a href="./inicio.html" class="nav-menu-link nav-link">Inicio |</a>
           </li>
           <li class="nav-menu-item">
             <a href="#" class="nav-menu-link nav-link">Contacto |</a>
           </li>
           <li class="nav-menu-item">
-            <a href="#" class="nav-menu-link nav-link">Acerca de |</a>
+            <a href="./aboutus.html" class="nav-menu-link nav-link">Acerca de |</a>
           </li>
           <li class="nav-menu-item hide">
-            <a href="#" class="nav-menu-link nav-link">Administración |</a>
+            <a href="./administrador.html" class="nav-menu-link nav-link">Administración |</a>
           </li>
           <li class="nav-menu-item" id="menuLogin">
             <a href="#" class="nav-menu-link nav-link"
@@ -82,31 +84,55 @@
               <p><i class="fa-solid fa-location-dot"></i> San Miguel de Tucuman - Argentina</p>
             </div>
           </div>
-          <div class="column2">
-            <input
-              type="text"
-              placeholder="Nombre y Apellido"
-              class="inputData center back"
-            />
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email"
-              class="inputData center back"
-            />
-            <textarea
-              name="mensaje"
-              id="mensaje"
-              class="back"
-            ></textarea>
-            <button type="submit" class="button">Enviar</button>
-            <form></form>
-          </div>
+          <form class="column2">
+            <div class="field">
+              <input
+                type="text"
+                placeholder="Nombre y Apellido"
+                minlength="3"
+                maxlength="40"
+                class="inputData"
+                id="nombre"
+                required
+              />
+              <div class="icons-text hide">
+                  <span class="icon1-text"><i class="fa-solid fa-check"></i></span>
+                  <span class="icon2-text"><i class="fa-solid fa-exclamation"></i></span>
+              </div>
+            </div>
+            <div class="field">
+              <input
+                type="email"
+                name="email"
+                minlength="8"
+                maxlength="40"
+                id="email"
+                placeholder="Email"
+                class="inputData"
+                required
+              />
+              <div class="icons-email hide">
+                <span class="icon1-email"><i class="fa-solid fa-check"></i></span>
+                <span class="icon2-email"><i class="fa-solid fa-exclamation"></i></span>
+            </div>
+            </div>
+              <textarea
+                name="mensaje"
+                id="mensaje"
+                placeholder="Mensaje"
+                minlength="10"
+                maxlength="255"
+                required
+              ></textarea>
+              <div class="message-error"></div>
+            <button type="submit" class="button" id="buttonForm">Enviar</button>
+          </form>
         </div>
       </div>
     </main>
     <!--Link al navbar.js-->
     <script src="./script/navbar.js" defer></script>
+    <!--Link al contacto.js-->
+    <script src="./script/contacto.js" defer></script>
   </body>
 </html>
