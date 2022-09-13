@@ -83,10 +83,12 @@ const newUser = () => {
     newUserEmail.value='';
     newUserPassword.value='';
   
-    alert('Usuario Agregado!');
+    //alert('Usuario Agregado!');
+    showAlert('success', 'Usuario Agregado!');
 
   }else{
-    alert('Usuario No Agregado!');
+    //alert('Usuario No Agregado!');
+    showAlert('error', 'Usuario No Agregado!');
   }
 
  };
@@ -120,15 +122,17 @@ function handleClick(event) {
 
 
     if (validationOk) {
-      alert('Validado');
+      //alert('Validado');
+      showAlert('success', 'Usuario y contraseña validos');
       if(email.value==='admin@gmail.com'){
-        location.href = '/RollingGames/administrador.html';
+        location.href = './administrador.html';
       }
       else{
-        location.href = '/RollingGames/inicio.html';
+        location.href = './inicio.html';
       }
     } else {
-      alert('Usuario o contraseña incorrectos');
+      //alert('Usuario o contraseña incorrectos');
+      showAlert('error', 'Usuario o contraseña incorrectos');
     }
   }, 1000);
 
@@ -141,8 +145,18 @@ function validationSessionStorage() {
   );
   console.log(login);
   if (login === true) {
-    location.href = '/RollingGames/inicio.html';
+    location.href = '.inicio.html';
   }
 }
 
 validationSessionStorage();
+
+// ---------------------------------------------------------------------------------------------------------
+/**********Ventana de alerta personalizada**********/
+const showAlert = (typeAlert, message) => {
+  if(typeAlert === 'error') {
+      Swal.fire('Alerta', message, typeAlert);
+  }else if(typeAlert === "success") {
+      Swal.fire('Exito', message, typeAlert);
+  }
+}
