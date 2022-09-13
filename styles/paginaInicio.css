@@ -17,10 +17,6 @@ body {
   margin-top: 6em;
 }
 
-.nav-bar {
-  height: 100px;
-  background-color: #2d132c;
-}
 
 .seccion-destacado {
   max-width: 70vw;
@@ -35,6 +31,7 @@ body {
   border-radius: 20px;
   max-height: 400px;
 }
+
 #ver-mas-btn {
   background:linear-gradient(0deg,#801336,#22010c);
   padding:1em 4em ;
@@ -51,7 +48,6 @@ body {
 .card-body {
   color: white;
 }
-
 #categorias-barra {
   width: 70vw;
   margin: auto;
@@ -90,122 +86,6 @@ a {
   text-decoration: 0;
 }
 
-/*carusel*/
-/* ---- ----- ----- Contenedor Titulo y Controles ----- ----- ----- */
-.contenedor {
-  margin: auto;
-  width: 88%;
-}
-.contenedor-titulo-controles {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-}
-
-.contenedor-titulo-controles h3 {
-  color: #fff;
-  font-size: 30px;
-  margin-top: 10px;
-}
-
-.contenedor-titulo-controles .indicadores button {
-  background: #fff;
-  height: 3px;
-  width: 10px;
-  cursor: pointer;
-  border: none;
-  margin-right: 2px;
-}
-
-.contenedor-titulo-controles .indicadores button:hover,
-.contenedor-titulo-controles .indicadores button.activo {
-  background: rgb(199, 44, 65);
-}
-
-/* ---- ----- ----- Contenedor Principal y Flechas ----- ----- ----- */
-.categorias {
-  margin-bottom: 70px;
-}
-
-.categorias .contenedor-principal {
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-.categorias .contenedor-principal .flecha-izquierda,
-.categorias .contenedor-principal .flecha-derecha {
-  position: absolute;
-  border: none;
-  background: rgba(199, 44, 65, 0.5);
-  font-size: 40px;
-  height: 20%;
-  top: calc(65% - 25%);
-  line-height: 40px;
-  width: 40px;
-  border-radius: 20px;
-  color: rgb(45, 19, 44);
-  cursor: pointer;
-  z-index: 500;
-  transition: 0.2s ease all;
-}
-
-.categorias .contenedor-principal .flecha-izquierda:hover,
-.categorias .contenedor-principal .flecha-derecha:hover {
-  background: #fff;
-}
-
-.categorias .contenedor-principal .flecha-izquierda {
-  left: 0;
-}
-
-.categorias .contenedor-principal .flecha-derecha {
-  right: 0;
-}
-
-/* ---- ----- ----- Carousel ----- ----- ----- */
-.categorias .contenedor-carousel {
-  width: 100%;
-  padding: 20px 0;
-  overflow: hidden;
-  scroll-behavior: smooth;
-}
-
-.carousel {
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-.juego {
-  min-height: 250px;
-  margin: 10px;
-  min-width: 18%;
-  transition: 0.3s ease all;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-}
-
-.juego:hover {
-  transform: scale(1.1);
-  transform-origin: center;
-}
-
-.juego .card-body {
-  margin: auto;
-  height: 10%;
-}
-.juego .card-body .card-title {
-  padding: 0;
-  font-size: 20px;
-  color: #2d132c;
-}
-
-.juego img {
-  width: 100%;
-  height: 80%;
-  vertical-align: top;
-}
-
-/*footer style*/
 
 .footer_juegos {
   background: linear-gradient(to bottom, #2d132c, #050308);
@@ -272,5 +152,3 @@ a {
 
 
 
-
-/*     ------------------------------------------- */

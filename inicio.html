@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rolling Games</title>
-    <link rel="stylesheet" href="/RollingGames/styles/navbar.css">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -21,11 +20,8 @@
       src="https://kit.fontawesome.com/c1d133cc0a.js"
       crossorigin="anonymous"
     ></script>
-
-    <script
-      src="https://kit.fontawesome.com/737440fb0f.js"
-      crossorigin="anonymous"
-    ></script>
+<link rel="stylesheet" href="./styles/navbar.css">
+   
   </head>
   <body>
     <header class="header">
@@ -55,7 +51,7 @@
             <a href="/RollingGames/aboutus.html" class="nav-menu-link nav-link">Acerca de |</a> 
           </li>
           <li class="nav-menu-item hide">
-            <a href="#" class="nav-menu-link nav-link">Administración |</a>
+            <a href="./administrador.html" class="nav-menu-link nav-link">Administración |</a>
           </li>
           <li class="nav-menu-item" id="menuLogin">
             <a href="#" class="nav-menu-link nav-link"
@@ -162,7 +158,7 @@
         ></a>
       </div>
     </footer>
-
+    <script src="./script/navbar.js"></script>
     <script src="./script/carusel.js" defer></script>
     <!-- JavaScript Bundle with Popper -->
     <script
@@ -170,13 +166,6 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
-    <script>
-      const popoverTriggerList = document.querySelectorAll(
-        '[data-bs-toggle="popover"]'
-      );
-      const popoverList = [...popoverTriggerList].map(
-        (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
-      );
-    </script>
+
   </body>
 </html>
