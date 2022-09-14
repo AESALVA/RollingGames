@@ -202,6 +202,15 @@ h1{
     cursor: pointer;
 }
 
+.highlight{
+    background: none; 
+    color: rgba(128, 128, 128, 0.719);
+}
+
+.highlight-color{
+    color:rgb(136, 20, 59);
+}
+
 .title-game {
     display: none;
 }
