@@ -96,7 +96,7 @@
 /*Para dispositivos que tengan menos de 768px*/
 @media (max-width: 768px) {
     body {
-        padding-top: 70px;
+        padding-top: 60px;
         padding-left: 0px;
         padding-right: 0px;
     }
