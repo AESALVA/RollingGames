@@ -16,13 +16,14 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
     background: linear-gradient(180deg, rgba(136, 20, 58, 0.55) 0%, rgba(191, 125, 124, 0.275) 100%);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .container {
@@ -66,6 +67,7 @@ h1{
     width: 80%;
     font-size: 18px;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
 }
 
 .datatable-container .header-tools {
@@ -222,7 +224,7 @@ h1{
 }
 
 /*********ESTILOS PARA LA VENTANA MODAL*********/
-.modal {
+.modal_view {
     position: fixed;
     top: 0;
     right: 0;
@@ -245,7 +247,7 @@ h1{
     --transition: transform .8s .8s;
 }
 
-.modal-container {
+.modal_container {
     margin: 120px auto;
     width: 85%;
     max-height: 768px;
@@ -260,58 +262,58 @@ h1{
     transition: var(--transition);
 }
 
-.modal-body {
+.modal_body {
     width: 100%;
     overflow-y: auto;
 }
 
-.modal-title {
+.modal_title {
     padding-bottom: 10px;
     font-size: 1.5rem;
 }
 
-.modal-body-row {
+.modal_body_row {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
 }
 
-.change-direction {
+.change_direction {
     flex-direction: column;
 }
 
-.change-aling {
+.change_aling {
     align-items: center;
     justify-content: center;
     height: 150px;
 }
 
-.modal-body-row label, .modal-body-column label {
+.modal_body_row label, .modal_body_column label {
     display: block;
     margin-bottom: 5px;
     font-size: 16px;
 }
 
-.modal-body-column input {
+.modal_body_column input {
     width: 250px;
     height: 30px;
     font-size: 15px;
 }
 
-.modal-body-row textarea, .modal-body-column textarea {
+.modal_body_row textarea, .modal_body_column textarea {
     width: 100%;
     height: 100px;
     resize: none;
 }
 
-.modal-footer {
+.modal_footer {
     width: 100%;
     display: flex;
     justify-content:flex-end;
     margin-top: 10px;
 }
 
-.modal-footer-button {
+.modal_footer_button {
     padding: 10px 25px;
     margin-left: 30px;
     border: 0;
@@ -323,7 +325,7 @@ h1{
     cursor: pointer;
 }
 
-.modal-footer-button:hover {
+.modal_footer_button:hover {
     background-color: #a82d29b0;
 }
 
@@ -390,7 +392,7 @@ h1{
         align-self: flex-end;
     }
 
-    .modal-container {
+    .modal_container {
         margin-top: 100px;
         padding: 1.5rem 1.5rem;
      }
@@ -400,6 +402,7 @@ h1{
 @media (max-width: 768px) {
     
     .container {
+        padding-top: 50px;
         width: 80%;
     }
 
@@ -430,30 +433,30 @@ h1{
         cursor: pointer;
     }
 
-    .modal-container {
+    .modal_container {
         padding: 2em 1.5em;
     }
 
-    .modal-title {
+    .modal_title {
         font-size: 1rem;
     }
-    .modal-body-row {
+    .modal_body_row {
         flex-direction: column;
     }
 
-    .modal-body-row label, .modal-body-column label {
+    .modal_body_row label, .modal_body_column label {
         margin-top: 5px;
     }
 
-    .modal-body-column input {
+    .modal_body_column input {
         width: 100%;
     }
 
-    .modal-footer {
+    .modal_footer {
         padding-top: 50px;
     }
 
-    .modal-footer-button {
+    .modal_footer_button {
         padding: 5px 12.5px;
         margin-left: 15px;
     }
