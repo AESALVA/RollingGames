@@ -67,6 +67,7 @@ h1{
     width: 80%;
     font-size: 18px;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
 }
 
 .datatable-container .header-tools {
@@ -401,6 +402,7 @@ h1{
 @media (max-width: 768px) {
     
     .container {
+        padding-top: 50px;
         width: 80%;
     }
 
