@@ -123,8 +123,8 @@ JSON.parse(localStorage.getItem('USERS')) ||
 [];
 
 // Creo usuarios dummies para comparar si el logueo es correcto o no
-const user_dummy_1 = { nombre:"Juan Garcia",telefono:"4917858",email: 'juan@gmail.com', password: 'juan'}
-const user_dummy_2 = { nombre:"Maria Luz Diaz",telefono:"153854111",email: 'maria@gmail.com', password: 'maria'}
+const user_dummy_1 = { nombre:"Juan Garcia",telefono:"4917858",email: 'juan@gmail.com', password: 'juan1234', es_admin:false}
+const user_dummy_2 = { nombre:"Maria Luz Diaz",telefono:"153854111",email: 'maria@gmail.com', password: 'maria1234',es_admin:true}
 
 USERS.push(user_dummy_1);
 USERS.push(user_dummy_2);
@@ -171,11 +171,9 @@ const newUser = () => {
     newUserEmail.value='';
     newUserPassword.value='';
   
-    //alert('Usuario Agregado!');
     showAlert('success', 'Usuario Agregado!');
 
   }else{
-    //alert('Usuario No Agregado!');
     showAlert('error', 'Usuario No Agregado!');
   }
 
@@ -195,14 +193,16 @@ function handleClick(event) {
     // Creo un flag o bandera para que controle si muestro el error o redireccion en caso de validar
     let validationOk = false;
 
+    let user = {};
+
     for (let i = 0; i < USERS.length; i++) {
       // Version clasica con for
       if (
         USERS[i].email === email.value &&
         USERS[i].password === password.value
-        && email.value.length<=50 && password.value.length<=40
       ) {
         validationOk = true;
+        user = USERS[i];
         sessionStorage.setItem('login', 'true');
       
       }
@@ -210,16 +210,14 @@ function handleClick(event) {
 
 
     if (validationOk) {
-      //alert('Validado');
       showAlert('success', 'Usuario y contraseña validos');
-      if(email.value==='admin@gmail.com'){
+      if(user.es_admin === true){
         location.href = './administrador.html';
       }
       else{
         location.href = './inicio.html';
       }
     } else {
-      //alert('Usuario o contraseña incorrectos');
       showAlert('error', 'Usuario o contraseña incorrectos');
     }
   }, 1000);
