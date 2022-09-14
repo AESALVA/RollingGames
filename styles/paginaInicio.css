@@ -17,10 +17,6 @@ body {
   margin-top: 6em;
 }
 
-.nav-bar {
-  height: 100px;
-  background-color: #2d132c;
-}
 
 .seccion-destacado {
   max-width: 70vw;
@@ -35,6 +31,7 @@ body {
   border-radius: 20px;
   max-height: 400px;
 }
+
 #ver-mas-btn {
   background:linear-gradient(0deg,#801336,#22010c);
   padding:1em 4em ;
@@ -51,7 +48,6 @@ body {
 .card-body {
   color: white;
 }
-
 #categorias-barra {
   width: 70vw;
   margin: auto;
@@ -89,6 +85,7 @@ a {
 a {
   text-decoration: 0;
 }
+
 
 /*carusel*/
 /* ---- ----- ----- Contenedor Titulo y Controles ----- ----- ----- */
@@ -204,8 +201,13 @@ a {
   height: 80%;
   vertical-align: top;
 }
-
-@media (max-width: 1000px) {
+@media (max-width: 1800px) {
+  #ver-mas-btn {
+    width: 12em;
+    padding: .5em;
+  }
+}
+@media (max-width: 1200px) {
   #ver-mas-btn {
     width: 15em;
     padding: .5em;
@@ -229,5 +231,3 @@ a {
 
 
 
-
-/*     ------------------------------------------- */
