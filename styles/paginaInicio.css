@@ -201,8 +201,13 @@ a {
   height: 80%;
   vertical-align: top;
 }
-
-@media (max-width: 1000px) {
+@media (max-width: 1800px) {
+  #ver-mas-btn {
+    width: 12em;
+    padding: .5em;
+  }
+}
+@media (max-width: 1200px) {
   #ver-mas-btn {
     width: 15em;
     padding: .5em;

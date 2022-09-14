@@ -10,6 +10,10 @@
 
 body{
   background-color: #151515;
+  padding-top: 1em;
+}
+.conteiner_principal{
+  background-color: #151515;
   padding-top: 6em;
 }
 section{
