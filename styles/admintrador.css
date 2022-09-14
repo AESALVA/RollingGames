@@ -13,6 +13,11 @@
     --dt-hover-cell-color: #ee4640b4;
 }
 
+* {
+    padding: 0;
+    margin: 0;
+}
+
 body {
     background: linear-gradient(180deg, rgba(136, 20, 58, 0.55) 0%, rgba(191, 125, 124, 0.275) 100%);
     background-repeat: no-repeat;
@@ -24,6 +29,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 100px;
     margin: 0 auto;
     width: 90%;
 }
@@ -240,8 +246,8 @@ h1{
 }
 
 .modal-container {
-    margin: 50px auto;
-    width: 80%;
+    margin: 120px auto;
+    width: 85%;
     max-height: 768px;
     max-width: 768px;
     height: 80%;
@@ -260,6 +266,7 @@ h1{
 }
 
 .modal-title {
+    padding-bottom: 10px;
     font-size: 1.5rem;
 }
 
@@ -384,7 +391,8 @@ h1{
     }
 
     .modal-container {
-        padding: 1.5srem 1.5rem;
+        margin-top: 100px;
+        padding: 1.5rem 1.5rem;
      }
 
 }
