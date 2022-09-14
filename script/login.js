@@ -118,18 +118,27 @@ const btn = document
   
 
   // Inicializo la lista de usuarios
-const USERS =
-JSON.parse(localStorage.getItem('USERS')) ||
-[];
+let USERS = [];
+
 
 // Creo usuarios dummies para comparar si el logueo es correcto o no
 const user_dummy_1 = { nombre:"Juan Garcia",telefono:"4917858",email: 'juan@gmail.com', password: 'juan1234', es_admin:false}
 const user_dummy_2 = { nombre:"Maria Luz Diaz",telefono:"153854111",email: 'maria@gmail.com', password: 'maria1234',es_admin:true}
 
-USERS.push(user_dummy_1);
-USERS.push(user_dummy_2);
 
-// Selecciono los elementos HTML
+document.addEventListener('DOMContentLoaded', () => {
+  //En el caso de que el array no este cargado al localStorge
+  if(localStorage.getItem('USERS') == "[]" || !localStorage.getItem('USERS')) {
+
+    USERS.push(user_dummy_1);
+
+    USERS.push(user_dummy_2);
+    
+    localStorage.setItem('USERS', JSON.stringify(USERS));
+  }
+
+  USERS= JSON.parse(localStorage.getItem('USERS'));
+});
 
 const newUserButton = document
   .getElementById('boton_registro')
@@ -143,6 +152,7 @@ const newUserEmail =
   document.getElementById('email_registro');
 const newUserPassword =
   document.getElementById('password_registro');
+
 
 // Programo la lógica necesaria
 const newUser = () => {
@@ -161,6 +171,7 @@ const newUser = () => {
       password:newUserPassword.value,
     
     };
+    us.es_admin = false;
     USERS.push(us);
     localStorage.setItem(
       'USERS',
