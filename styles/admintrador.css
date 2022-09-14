@@ -16,13 +16,14 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
     background: linear-gradient(180deg, rgba(136, 20, 58, 0.55) 0%, rgba(191, 125, 124, 0.275) 100%);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .container {

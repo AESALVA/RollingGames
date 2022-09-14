@@ -30,7 +30,7 @@ const updateTable = () => {
         <td>Falta agregar en el modal</td>
         <td>${game.resumen}</td>
         <td class="table-checkbox">
-          <input type="checkbox" name="" id="" />
+          <input type="checkbox" name="" id="" checked/>
         </td>
         <td>
           <span class="options">
