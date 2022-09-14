@@ -23,6 +23,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./AssetData/Sweet/sweetalert2.css">
+    <script src="./AssetData/Sweet/sweetalert2.min.js" defer></script>
 
     <!-- CSS only -->
     <link
@@ -40,9 +42,9 @@
                 <div class="container-form">
                     <form class="formulario">
                         <h2 class="create-account">Recuperar Contraseña</h2>
-                        <input type="email" placeholder="Email" required autofocus maxlength="50">
+                        <input id="email_clave" type="email" placeholder="Email" required autofocus maxlength="50">
                         <a href="./error_recuperar_clave.html">
-                            <input type="button" class="btn btn-danger" value="Enviar">
+                            <input id="btn_clave" type="button" class="btn btn-danger" value="Enviar">
                          </a>
                     </form>
                 </div>
@@ -74,7 +76,7 @@
     </footer>
 
     <!-- JavaScript Bundle with Popper -->
-    <script src = "./script/login.js"></script>
+    <script src = "./script/recuperar_clave.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"

@@ -29,6 +29,94 @@ const btn = document
   .getElementById('boton_login')
   .addEventListener('click', e => handleClick(e));
 
+  const Button = document.getElementById('boton_login');
+
+  Button.addEventListener('click', (e) => {
+      e.preventDefault();
+      const flags= validationInputLogin([[email, flagEmailLogin],[password, flagPasswordLogin]]);
+      if(flags[0]) {
+          showAlert('error', flags[1]);
+      }else {
+          showAlert('success', "");
+          cleanInputs([email, password]);
+      }
+  });
+  
+  
+  //Valido los datos ingresado por los inputs
+  const validationInputLogin = (inputs) =>{
+      let flag= false;
+      let messageError= "";
+  
+  
+      for(let i = 0; i < inputs.length; i++){
+          //Para controlar los campos vacios
+          if(inputs[i][0].value === "") {
+              messageError = `Debe completar el campo ${inputs[i][0].placeholder}`;
+          }//Para controlar el campo nombre
+          else if(inputs[i][1]) { 
+              messageError = `El campo ${inputs[i][0].placeholder} es invalido`;
+          }
+          if(messageError.length != 0) {
+              flag= true;
+              break;
+          }
+      }
+  
+      return [flag, messageError];
+  };
+  
+  
+  // ---------------------------------------------------------------------------------------------------------
+  /**********Codigo para controlar el campo email**********/
+  let flagEmailLogin= false;
+  
+  email.addEventListener('keyup', () => {
+      let regExp = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  
+      if(email.value.match(regExp)) {
+          email.classList.remove('error');
+          email.classList.add('correct');
+          flagEmailLogin= false;
+      }else {
+          flagEmailLogin= true;
+          email.classList.remove('correct');
+          email.classList.add('error');
+      }
+      
+      if(email.value === ""){
+          email.classList.remove('correct', 'error');
+      }
+  });
+  
+  // ---------------------------------------------------------------------------------------------------------
+  /**********Codigo para controlar el campo email**********/
+  
+  
+  
+  // ---------------------------------------------------------------------------------------------------------
+  /**********Codigo para controlar el password**********/
+  let flagPasswordLogin= false;
+  
+  password.addEventListener('keyup', ()=> {
+      if(password.value.length < 8 || password.value.length > 40) {
+          password.classList.remove('correct');
+          password.classList.add('error');
+          flagPasswordLogin= true;
+      }else {
+          password.classList.remove('error');
+          password.classList.add('correct');
+          flagPasswordLogin= false;
+      }
+  
+      if(password.value === ""){
+          password.classList.remove('correct', 'error');
+      }
+  });
+  // ---------------------------------------------------------------------------------------------------------
+  /**********Codigo para controlar el password**********/
+  
+
   // Inicializo la lista de usuarios
 const USERS =
 JSON.parse(localStorage.getItem('USERS')) ||
