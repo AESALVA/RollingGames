@@ -92,7 +92,7 @@ function createRemarkable() {
 					  <h5 class="card-title">${data.name}</h5>
 					  <p class="card-text text-muted">YA DISPONIBLE</p>
 					  <p class="card-text">${data.resumen}</p>
-					  <div class="fondo"><a id="ver-mas-btn" class="button_verMas" target:"_parent" onclick="selectedGame('${idGame}')" role="button">Ver más</a></div>
+					  <div class="fondo"><a id="ver-mas-btn" class="button_verMas" target:"_parent" onclick="selectedGame('${data.id}')" role="button">Ver más</a></div>
 					</div>
 				  </div>
 				</div>

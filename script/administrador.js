@@ -12,7 +12,16 @@ const updateTable = () => {
 
     MOCKED_DATA= JSON.parse(localStorage.getItem('MOCKED_DATA'));
 
+    //Me traigo el juego destacado
+    const featuredGame= JSON.parse(localStorage.getItem("juegoDestacado"));
+
     MOCKED_DATA.forEach(game => {
+        //Pinto de un color el icono destacado para el juego destacado
+        let colorFeatured = "highlight";
+        if(game.id === featuredGame){
+            colorFeatured= "highlight-color";
+        }
+
         //Agrego el juego a la tabla
         let newRow = document.createElement('tr');
         newRow.innerHTML= `<td class="title-game">${game.name}</td>
@@ -31,7 +40,7 @@ const updateTable = () => {
             <span class="edit" onclick="editGame('${game.id}')"
               ><i class="fa-solid fa-pen-to-square"></i
             ></span>
-            <span class="highlight" onclick= "featuredGame('${game.id}')"
+            <span class=${colorFeatured} onclick= "featuredGame('${game.id}')"
               ><i class="fa-solid fa-star"></i
             ></span>
           </span>
@@ -291,16 +300,17 @@ const featuredGame= (idGame) => {
 }
 const moveGames= (idGame) => {
     //Me guardo el nombre del actual juego destacado
-    let idFeatured= JSON.parse(localStorage.getItem("juegoDestacado"));
-    let currentFeatured= searchGame(idFeatured);
-    let newCurrentFeatured= searchGame(idGame);
+    // let idFeatured= JSON.parse(localStorage.getItem("juegoDestacado"));
+    // let currentFeatured= searchGame(idFeatured); //actual
+    let firstGame= MOCKED_DATA[0];
+    let newCurrentFeatured= searchGame(idGame); //nuevo
 
-    let indexIdGame= MOCKED_DATA.indexOf(newCurrentFeatured);
-    let indexIdFeatured= MOCKED_DATA.indexOf(currentFeatured);
+    // let indexIdFeatured= MOCKED_DATA.indexOf(currentFeatured); // indice actual
+    let indexIdGame= MOCKED_DATA.indexOf(newCurrentFeatured); // indice nuevo
 
     //Hago el swap
-    MOCKED_DATA[indexIdFeatured] = newCurrentFeatured;
-    MOCKED_DATA[indexIdGame]= currentFeatured;
+    MOCKED_DATA[0] = newCurrentFeatured;
+    MOCKED_DATA[indexIdGame]= firstGame;
 
     databaseGames(null, 'update');
 };
