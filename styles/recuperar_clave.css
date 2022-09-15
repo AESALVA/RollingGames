@@ -8,46 +8,31 @@
   }
 
 /**/
-body{
-  min-width: 100vw;
-  min-height:100vh;
-}
-main{
+
+body {
   align-items: center;
   justify-content: center;
   background-image: url("../AssetData/FondoInicio/fondoInicio.jpg");
+  height: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  max-height: 100vh;
-  max-width: 100vw;
-}
-
-.conteiner_principal{
-  min-height: 100vh;
-  display: flex;
-  justify-content:space-between;  
-  align-items: center;
-  min-width: 100vw;
 }
 
 
 .container-form {
-  max-width: 100vw;
+  width: 100%;
+  height: 100vh;
   display: flex;
+  justify-content: space-around;
+  transition:  all .5s ease-out;
   background-color:#2d132c83;
-  margin: 0 15em;
-  align-items: center;
 }
 
 .welcome-back {
-    height:100vh;
-    max-width: 100vw;
     display: flex;
-    justify-content: center;
     align-items: center;
     text-align: center;
-    margin: auto;
 }
 
 .message {
@@ -77,14 +62,12 @@ main{
     background-color: #6464f8;
 }
 
-.formulario{
-    width: 30em;
+.formulario {
+    width: 400px;
     padding: 1rem;
+    margin: 2rem;
     background-color: rgb(51, 51, 51, 0.602);
     text-align: center;
-    min-height: 100vh;
-    margin: 0 15em;
-    min-height: 100vh;
 }
 
 .create-account {
@@ -151,20 +134,20 @@ main{
 }
 
 .sign-in {
-    display: none;
+    position: absolute;
+    opacity: 0;
     visibility: hidden;
-  }
-.sign-up{
-  visibility: visible;
-}
-.sign-in.active {
-  display: flex;
-  visibility: visible;
 }
 
-.sign-up.active{
-    display: none;
-  }
+.sign-in.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sign-up.active {
+    opacity: 0;
+    visibility: hidden;
+}
 /**/
 
 .frase {
@@ -241,46 +224,13 @@ main{
   text-align: center;
 }
 
-
-@media (max-width: 1200px) {
-
-  .conteiner_principal {
-  flex-direction: column;
-  }
-  .container-form {
-    min-width: 25vw;
-    display: flex;
-    flex-direction: column;
-    background-color:#2d132c83;
-
-  }
-  .welcome-back{
-    max-width: 15vw;
-    height: 25vh;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin: auto;
-    margin-top: 5em;
-
- }
-  .formulario{
-    max-width:25em;
-    padding: 1rem;
-    background-color: rgb(51, 51, 51, 0.602);
-    text-align: center;
-    min-height: 25vh;
-}
-  }
-
-
 @media (max-width:600px) {
-  .footer_redes{
-    font-size: 1.5em;
-  }
-
-.footer_redes a:hover{
-  box-shadow: none;
-}
+    .footer_redes{
+      font-size: 1.5em;
+    }
   
-}
+  .footer_redes a:hover{
+    box-shadow: none;
+  }
+    
+  }
