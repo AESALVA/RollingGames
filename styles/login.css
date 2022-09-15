@@ -13,14 +13,21 @@ body {
   align-items: center;
   justify-content: center;
   background-image: url("../AssetData/FondoInicio/fondoInicio.jpg");
-  height: 100%;
+  min-height: 100vh;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
+.conteiner_principal{
+
+  min-height: 100vh;
+  display: flex;
+}
+
 
 .container-form {
+  position: fixed;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -30,6 +37,8 @@ body {
 }
 
 .welcome-back {
+    height:80%;
+    margin:auto;
     display: flex;
     align-items: center;
     text-align: center;
@@ -68,6 +77,8 @@ body {
     margin: 2rem;
     background-color: rgb(51, 51, 51, 0.602);
     text-align: center;
+    max-height: 600px;
+    margin:auto;
 }
 
 .create-account {
@@ -222,6 +233,23 @@ body {
   font-size: 3vw;
   padding: 5em;
   text-align: center;
+}
+
+
+@media (max-width: 768px) {
+
+  .container-form {
+    flex-direction: column;
+  }
+  
+  .welcome-back {
+    min-height: 100vh;
+    justify-content: flex-end;
+  }
+
+  .formulario{
+    display: none;
+  }
 }
 
 @media (max-width:600px) {
