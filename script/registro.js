@@ -1,6 +1,6 @@
 // Selecciono los elementos HTML
 
-const newUserButton = document.getElementById('boton_registro');
+const BTN = document.getElementById('boton_registro');
 
 const newUserName =
   document.getElementById('nombre_registro');
@@ -11,16 +11,55 @@ const newUserEmail =
 const newUserPassword =
   document.getElementById('password_registro');
 
-newUserButton.addEventListener('click', (e) => {
+// Inicializo la lista de usuarios
+let USERS = [];
+
+
+// Creo usuarios dummies para comparar si el logueo es correcto o no
+const user_dummy_1 = { nombre:"Juan Garcia",telefono:"4917858",email: 'juan@gmail.com', password: 'juan1234', es_admin:false}
+const user_dummy_2 = { nombre:"Maria Luz Diaz",telefono:"153854111",email: 'maria@gmail.com', password: 'maria1234',es_admin:true}
+
+document.addEventListener('DOMContentLoaded', () => {
+   //En el caso de que el array no este cargado al localStorge
+   if(localStorage.getItem('USERS') == "[]" || !localStorage.getItem('USERS')) {
+ 
+     USERS.push(user_dummy_1);
+ 
+     USERS.push(user_dummy_2);
+     
+     localStorage.setItem('USERS', JSON.stringify(USERS));
+   }
+ 
+   USERS= JSON.parse(localStorage.getItem('USERS'));
+ });
+
+
+BTN.addEventListener('click', (e) => {
     e.preventDefault();
     const flags= validationInput([[newUserName, flagName], [newUserPhone, flagPhone], [newUserEmail, flagEmail],[newUserPassword, flagPassword]]);
     if(flags[0]) {
         showAlertRegister('error', flags[1]);
     }else {
         showAlertRegister('success', "");
+        const us = {
+            nombre: newUserName.value,
+            telefono:newUserPhone.value,
+            email:newUserEmail.value,
+            password:newUserPassword.value,
+          
+          };
+          us.es_admin = false;
+          USERS.push(us);
+          localStorage.setItem(
+            'USERS',
+            JSON.stringify(USERS)
+          );
+
         cleanInputs([newUserName, newUserPhone, newUserEmail, newUserPassword]);
     }
 });
+
+
 
 
 //Valido los datos ingresado por los inputs

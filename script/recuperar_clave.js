@@ -8,18 +8,18 @@ const Email =
 
 Button.addEventListener('click', (e) => {
     e.preventDefault();
-    const flags= validationInput([[Email, flagEmail]]);
+    const flags= validationInputRecuperarPassword([[Email, flagEmail]]);
     if(flags[0]) {
         showAlertRecuperarPassword('error', flags[1]);
     }else {
         showAlertRecuperarPassword('success', "");
-        cleanInputs([Email]);
+        cleanInputsRecuperarPassword([Email]);
     }
 });
 
 
 //Valido los datos ingresado por los inputs
-const validationInput = (inputs) =>{
+const validationInputRecuperarPassword = (inputs) =>{
     let flag= false;
     let messageError= "";
 
@@ -76,3 +76,10 @@ const showAlertRecuperarPassword = (typeAlert, message) => {
         Swal.fire('Exito', 'Se envió la clave correctamente', typeAlert);
     }
 }
+
+const cleanInputsRecuperarPassword= (inputs) =>{
+    inputs.forEach(input => {
+        input.value= "";
+        input.classList.remove('correct', 'error');
+    });
+  };
