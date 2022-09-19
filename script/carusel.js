@@ -59,10 +59,9 @@ const DATA_REMARKABLE = [
 
 // ---------------------------------------------------------------------------------------------------------
 /**********Consulto el localStorage cuando se carga la pagina**********/
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   createRemarkable();
 });
-
 
 // ---------------------------------------------------------------------------------------------------------
 /*********Codigo para sincronizar los cambios que hayan en el localstorage**********/
@@ -106,9 +105,15 @@ const estrategia = document.getElementById("estrategia");
 const accion = document.getElementById("accion");
 const aventura = document.getElementById("aventura");
 const otros = document.getElementById("otros");
+const searchInput = document.getElementById("searchInput");
+const search = document
+  .getElementById("search")
+  .addEventListener("click", function (e) {
+    e.preventDefault(), upDateResults();
+  });
 
-function createCardsTwo(data) {
-  data.map((d) => {
+function createCardsTwo() {
+  DATA_REMARKABLE.map((d) => {
     const cards = document.createElement("div");
     const button = document.createElement("a");
     cards.classList = "card_perfil";
@@ -121,6 +126,32 @@ function createCardsTwo(data) {
     </div>
     <p>${d.name}</p>
   </div>`;
+    button.innerHTML = `<a class="button_verMas" target="_parent" onclick="selectedGame('${d.id}')"> VER MAS </a>`;
+    cards.appendChild(button);
+    categoria.appendChild(cards);
+  });
+}
+
+function upDateResults() {
+  categoria.innerHTML = "";
+  const input = searchInput.value;
+
+  const filtered = DATA_REMARKABLE.filter((d) =>
+    d.name.toUpperCase().includes(input.toUpperCase())
+  );
+  filtered.map((d) => {
+    const cards = document.createElement("div");
+    const button = document.createElement("a");
+    cards.classList = "card_perfil";
+    cards.innerHTML = `
+     <div class="img">
+       <img
+        src="${d.img}"
+         alt="img_juego"
+       />
+     </div>
+     <p>${d.name}</p>
+   </div>`;
     button.innerHTML = `<a class="button_verMas" target="_parent" onclick="selectedGame('${d.id}')"> VER MAS </a>`;
     cards.appendChild(button);
     categoria.appendChild(cards);
@@ -174,7 +205,7 @@ function searchGame(idGame) {
   return game;
 }
 
-createCardsTwo(DATA_REMARKABLE);
+createCardsTwo();
 createCardsThree(DATA_REMARKABLE, estrategia);
 createCardsThree(DATA_REMARKABLE, accion);
 createCardsThree(DATA_REMARKABLE, aventura);
