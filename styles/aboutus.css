@@ -241,6 +241,9 @@ section {
   .conteiner_cards {
     grid-template-columns: 1fr 1fr;
   }
+  .texto_aboutus h1{
+    padding-top: 2em;
+  }
 }
 @media (max-width: 800px) {
   .footer_redes {
@@ -260,6 +263,10 @@ section {
   }
   .img {
     max-width: 20em;
+  }
+  .texto_aboutus h1{
+    padding-top: 2em;
+    font-size: 2em;
   }
   .texto_aboutus2 h2 {
     font-size: 2em;
