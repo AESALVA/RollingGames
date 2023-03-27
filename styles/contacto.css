@@ -1,0 +1,168 @@
+body {
+    background-image: url("../AssetData/PaginaContacto/fondo-contacto2.png");
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 100px 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+}
+
+.container-contact {
+    background: rgba(217, 217, 217, 0.5);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+}
+
+.column1, .column2 {
+    margin: 32px 40px;
+}
+
+
+.title-contact {
+    font-size: 32px;
+    width: 379px;
+    height: 75px;
+    text-align: center;
+}
+
+iframe {
+    width: 379px;
+    height: 220px;
+}
+
+.field, textarea {
+    background: rgba(217, 217, 217, 0.6);
+}
+
+.field {
+    display: block;
+    position: relative;
+    margin-bottom: 31px;
+    width: 320px;
+    height: 50px;
+}
+
+.inputData{
+    background: transparent;
+    width: inherit;
+    height: inherit;
+    text-align: center;
+    border-color: transparent;
+}
+
+.icons-email, .icons-text {
+    position: absolute;
+    right: 15px;
+    top: 20px;
+}
+
+.correct {
+    border-color: #27ae60;
+}
+
+.error {
+    border-color: #e74c3c;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+textarea {
+    width: 320px;
+    height: 194px;
+    resize: none;
+    border: none;
+}
+
+/*Oculto el placeholder del textarea*/
+textarea::placeholder {
+    color: transparent;
+}
+
+#ubication {
+    width: 363px;
+    height: 120px;
+    margin-top: 32px;
+}
+
+#ubication p {
+    margin-bottom: 10px;
+}
+
+.button {
+    display: block;
+    width: 320px;
+    height: 50px;
+    background: #C72C41;
+    border-radius: 14px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    margin-top: 40px;
+    
+}
+
+.button:hover {
+    cursor:pointer;
+    background-color: #c72c41da;
+}
+
+.button:active {
+    background-color: #6b0c19;
+}
+
+/*Para dispositivos que tengan menos de 768px*/
+@media (max-width: 768px) {
+    .container-contact {
+        flex-direction: column;
+    }
+
+    .title-contact {
+        width: 200px;
+    }
+
+    iframe {
+        width: 200px;
+    }
+
+    .field{
+        width: 200px;
+    }
+
+    #ubication {
+        width: 150px;
+    }
+
+    textarea {
+        width: 15px;
+    }
+
+    .button {
+        width: 200px;
+    }
+
+    .column1, .column2 {
+        margin: 20px 30px;
+    }
+
+    textarea {
+        width: 200px;
+    }
+
+}

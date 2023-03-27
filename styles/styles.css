@@ -1,0 +1,149 @@
+ @import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@700&family=Josefin+Sans&family=Roboto+Slab&display=swap"); 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: rgba(255, 255, 255, 0.76);
+  font-family: "Roboto Slab";
+}
+
+body{
+  background-color: #151515;
+  padding-top: 1em;
+}
+.conteiner_principal{
+  background-color: #151515;
+  padding-top: 6em;
+}
+section{
+  background-color: #151515;
+}
+.frase {
+  font-family: "Roboto Slab";
+  border: 2px solid red;
+}
+.juego_titulo{
+  text-align: center;
+  background-color: #151515;
+}
+.footer_juegos {
+  background: linear-gradient(to bottom, #2d132c, #050308);
+  padding: 1em;
+  
+}
+.resumen_juegp{
+  font-size: 3vw;
+  text-align: center;
+  padding: 3em;
+  background-color: #151515;
+}
+.conteiner_trailer{
+  background-color: #151515;
+}
+.img_trailer{
+  z-index: 1;
+}
+.img_trailer:hover{
+  visibility: hidden;
+  z-index: -1; 
+  transition: .5s;
+  box-shadow: 0px 0px 15px 7px #C72C41;   
+
+}
+
+.img_gif:hover{
+  box-shadow: 0px 0px 15px 7px #C72C41;   
+  transition: .5s;
+  z-index: 1;
+}
+
+.footer_redes {
+  font-size: 3em;
+  display: grid;
+  grid-template-columns:repeat(4, 1fr);
+  align-items: center;
+}
+.footer_redes a{
+  text-decoration: none;
+  border-radius: 50%;
+  width: 2em;
+  transition: .5s;
+}
+.footer_redes a:hover{
+  box-shadow: 0px 0px 15px 7px #C72C41;
+  color:#EE4540;
+  transition: .5s;
+}
+.icon:hover{
+  text-shadow: 0px 0px 15px #C72C41;
+  color:#EE4540;
+  transition: .1s;
+}
+.icon:hover::before{
+  transform: scale(1.4);
+  transition: .3s;
+}
+
+.icon{
+  border-radius: 50%;
+  margin: auto;
+}
+
+
+.historia{
+  display: flex;
+}
+
+.bg_img_historia{
+  width: 100%;
+  opacity: .5;
+}
+
+.texto_historia{
+  position: absolute;
+  font-size: 3vw;
+  padding: 4em;
+  text-align: center;
+}
+
+
+.button_verMas{
+  text-decoration: none;
+  text-shadow: 1px 1px 2px black, 0 0 1em #2d132c, 0 0 0.2em #2d132c;
+  color:#ffffffc2;
+  padding: .5em;
+  transition: 0.5s;
+  background:linear-gradient(0deg,#801336,#22010c);
+  padding:1em 4em ;
+  border-radius: 5em;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20em;
+}
+.button_verMas:hover{
+  text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
+  transition: 0.5s;
+  color:#ffffffc2;
+  box-shadow: 0px 0px 15px 7px #151515;
+  transition: 0.5s;
+}
+.fondo{
+  background-color: #151515;
+  padding: 2em;
+}
+
+@media (max-width:600px) {
+  .footer_redes{
+    font-size: 1.5em;
+  }
+
+  .footer_redes a:hover{
+    box-shadow: none;
+  }
+  .button_verMas{
+    width: 10em;
+  }
+}
